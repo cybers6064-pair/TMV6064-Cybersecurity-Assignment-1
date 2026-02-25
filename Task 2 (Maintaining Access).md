@@ -12,15 +12,15 @@ controlled environment or on authorized targets.
 - Web back doors
 
 **Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools (*Webshells; Weevely; Cryptcat*).  
-**Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (Damn Vulnerable Web Application, *DVWA*)  
+**Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (*Damn Vulnerable Web Application, DVWA*)  
 
 ## Installing & Setting up Target Environment: Vulnerable Target Application (DVWA)  
 (insert ss)  
 **Command**: `blahblah`
 
 ## Tool 1: Webshells  
-Webshell consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
-**Key Features Used:**  
+**Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
+**Key Features:**  
 - Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
 - Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
 - Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent.
@@ -37,7 +37,11 @@ Webshell consist of a single-line script that executes system commands through w
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
 ## Tool 2: Weevely  
-
+" **Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"―  *Kali Linux*  
+**Key Features:**  
+- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
+- Encrypted Communications: Secures the traffic between the attacker and the web server.
+- Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools.
 
 
 
