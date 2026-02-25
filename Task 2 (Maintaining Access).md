@@ -12,8 +12,11 @@ controlled environment or on authorized targets.
 - Tunnelling and exfiltration
 - Web back doors
 
-**Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools (*Webshells; Weevely; Cryptcat*).  
+**Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools.  
+
 **Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (*Damn Vulnerable Web Application, DVWA*)  
+
+**Tools:** *Webshells, Weevely, Cryptcat*
 
 ## Installation & Setting up Target Environment: Vulnerable Target Application (DVWA)  
 (insert ss)  
