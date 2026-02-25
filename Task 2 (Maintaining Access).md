@@ -11,9 +11,10 @@ controlled environment or on authorized targets.
 
 ## Tool 1: Webshells  
 Webshell consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
-
 **Key Features Used:**  
 - Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
-- Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing
-- 
+- Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
+- Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent.
+
+**Step-by-Step Execution**
 
