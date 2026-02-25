@@ -17,7 +17,13 @@ NMAP (Network Mapper) is a free and open-source tool used for network discovery.
 ## 1.1 Host Discovery
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5dc67d9f9b9907055df5dffdbbb65fa01ad32612/Task%201%20(Reconnaissance)/images/nmap%20host%20discovery.png)
 
-NMAP can be utilized for **host discovery**, which is the initial phase of network reconnaissance. It aims to identify active systems in a target network. The command **nmap -Pn (host IP)**, as shown in the image above, can be used for this purpose, where **-Pn** was used to assume host is active, **-PE** sends ping and wait for echo requests to determine whether the host is active, and **-sn** disables port scanning to focus solely on identifying active hosts. Additionally, the host discovery feature narrows large IP ranges into a manageable list of active systems, which improves scanning efficiency. For this feature, NMAP also supports customizable probing techniques, including TCP, UDP, and ICMP scans, which allows users to tailor their approach according to specific objectives and network conditions, such as firewall or filtering bypassing (Chapter 3. Host Discovery, n.d.; Obialom, 2023). Therefore, this feature of NMAP enhances the effectiveness of preliminary information gathering during network reconnaissance, which is crucial as identifying active hosts allows professionals, such as security analysts, define the attack surface, prioritize targets, and support more strategic planning for subsequent scanning or security assessment tasks.
+NMAP can be utilized for **host discovery**, which is the initial phase of network reconnaissance. It aims to identify active systems in a target network (_Chapter 3. Host Discovery_, n.d.). The command `nmap -Pn (host IP)`, as shown in the image above, can be used for this purpose. The breakdown of the command is as follows:
+
+- **-Pn**: used to assume host is active
+- **-PE**: sends ping and wait for echo requests to determine whether the host is active
+- **-sn**: disables port scanning to focus solely on identifying active hosts
+
+Additionally, the host discovery feature narrows large IP ranges into a manageable list of active systems, which improves scanning efficiency. For this feature, NMAP also supports customizable probing techniques, including TCP, UDP, and ICMP scans, which allows users to tailor their approach according to specific objectives and network conditions, such as firewall or filtering bypassing (_Chapter 3. Host Discovery_, n.d.; Obialom, 2023). Therefore, this feature of NMAP enhances the effectiveness of preliminary information gathering during network reconnaissance, which is crucial as identifying active hosts allows professionals, such as security analysts, define the attack surface, prioritize targets, and support more strategic planning for subsequent scanning or security assessment tasks.
 
 
 ## 1.2 Port Scanning
