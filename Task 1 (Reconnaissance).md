@@ -5,7 +5,7 @@
 **This project is for educational purposes only. All testing was performed in a controlled environment or on authorized targets.
 
 ## Introduction
-**(add Reconnaissance description)**
+In Cybersecurity, reconnaissance refers to the initial phase of a cyber attack that involves systematic information gathering to identify potential vulnerabilities within a target system or network. Similar to military reconnaissance, it focuses on collecting intelligence or information prior to launching an attack. Moreover, reconnaissance can be either passive or active. Passive reconnaissance is where the attackers collects information without directly interacting with the target, while active reconnaissance involves direct techniques such as network scanning, port scanning, and vulnerability scanning. The process typically includes collecting publicly available and technical data, identifying the network scope and IP ranges, detecting security mechanisms such as firewalls or intrusion detection systems, locating open ports and access points, determining the services and versions running on those ports, and mapping the overall network architecture. This structured approach enables attackers to understand the target’s attack surface, identify entry points, and strategically plan subsequent exploitation activities (Sharadin, n.d.). For the purpose of Task 1: Reconnaissance, the demonstration fully follows active reconnaissance.
 
 **Tools:** NMAP, Recon-ng, and Hping3
 
@@ -68,11 +68,12 @@ NMAP also provides service version detection, emphasizing that accurate service 
 
 ## References/Credits
 **NMAP**
-Nmap. (n.d.). https://nmap.org/
-_Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
-_A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.org/book/port-scanning-tutorial.html
-_Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
-Obialom, B. (2023, November 29). A guide to using NMAP on Kali Linux. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
+- Nmap. (n.d.). https://nmap.org/
+- _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
+- _A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.org/book/port-scanning-tutorial.html
+- _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
+- Obialom, B. (2023, November 29). A guide to using NMAP on Kali Linux. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
+- Sharadin, G. (n.d.). What is Cybersecurity Reconnaissance | Types & Protection | Imperva. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
 **Recon-ng**
 1. ref-1
