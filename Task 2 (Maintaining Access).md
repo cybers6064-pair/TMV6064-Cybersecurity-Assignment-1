@@ -25,7 +25,7 @@ controlled environment or on authorized targets.
 ## 1. Webshells  
 **Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
 ### 1.1 Key Features  
-"- Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
+- Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
 - Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
 - Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent"― *Gemini*
 
@@ -43,7 +43,7 @@ controlled environment or on authorized targets.
 ## 2. Weevely  
 " **Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"―  *Kali Linux*  
 ### 2.1 Key Features  
-"- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
+- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
 - Encrypted Communications: Secures the traffic between the attacker and the web server.
 - Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools"― *Gemini*
 
@@ -69,7 +69,7 @@ controlled environment or on authorized targets.
 ## 3. Cryptcat  
 CryptCat provides a two-way encrypted version of the standard NetCat enhanced program, where it functions as the most basic Unix utility tool, reading and publishing data across network connections (Chandel, 2020). CryptCat encrypts data that users send across a network using either the TCP or UDP protocol, and it acts as a dependable back-end tool that users can easily utilize with scripts (Chandel, 2020).  
 ### 3.1 Key Features
-"- Military-Grade Twofish Encryption: Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
+- Military-Grade Twofish Encryption: Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
 - Protocol/Service Independence: Bypasses the need for a web server entirely; works directly over raw TCP ports.
 - Bi-Directional Versatility: Can act as a listener or a client to create stealthy, point-to-point data connections"― *Gemini*
 
