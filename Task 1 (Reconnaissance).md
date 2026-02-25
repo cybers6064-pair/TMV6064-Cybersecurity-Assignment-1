@@ -48,12 +48,45 @@ As illustrated in the image above, the output is presented in a human-readable f
 NMAP also provides service version detection, emphasizing that accurate service and version detection is crucial for vulnerability assessments, identifying applicable exploits, and maintaining an accurate network inventory. NMAP’s version detection actively interrogates open ports with service-specific probes to reveal beyond the service type and version, but also additional details such as service configurations, SSH protocol numbers, Apache modules, configured hostnames, operating system, and device type (_Chapter 7. Service and Application Version Detection_, n.d.). This approach provides a more detailed and reliable understanding of what is truly running on the target system, enhancing the effectiveness of reconnaissance and security assessment activities. As shown in the image above, the results displayed are a clean list of port, port state, and its respective service and version using the command `nmap -Pn -sV <host IP>` that is used to identify which service version are running on the open ports. In this case, the -sV option is specifically used to enable service detection (Obialom, 2023). This command accurately identifies the exact services and software versions running on open ports, which is essential for determining potential vulnerabilities and supporting informed decision-making in subsequent security assessments.
 
 ## 2. Recon-ng
+Recon-ng is free and open source tool available on GitHub. Recon-ng is based upon Open Source Intelligence (OSINT), the easiest and useful tool for reconnaissance. Recon-ng interface is very similar to Metasploit 1 and Metasploit 2.Recon-ng provides a command-line interface that you can run on Kali Linux. This tool can be used to get information about our target(domain). The interactive console provides a number of helpful features, such as command completion and contextual help. Recon-ng is a Web Reconnaissance tool written in Python. It has so many modules, database interaction, built-in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted, and we can gather all information (GeeksforGeeks, 2025). For this demonstration, a tutorial from GeeksForGeeks was followed.
 
-## 2.1
+## 2.1 Key Features
 
-## 2.2
+## 2.2 Step-by-Step Execution
+**Step 1: Installing Recon-ng on Kali Linux**
+(insert image)
 
-## 2.3
+The command `git clone https://github.com/lanmaster53/recon-ng` is used to install Recon-ng on Kali Linux.
+
+**Step 2: Downloading and Running Recon-ng**
+(insert image)
+
+The command `recon-ng` is used to download and Run Recon-ng.
+
+**Step 3: Create Workspace**
+(insert image)
+
+The command `workspaces` is used to create a workspace to set up environment for reconnaissance in Recon-ng. Unnamed workspace uses default as its default workspace name.
+
+**Step 4: Marketplace Search**
+(insert image)
+
+The command `marketplace search` is used to display a list of modules for installation purpose.
+
+**Step 5: Module Installation**
+(insert image)
+
+The command `marketplace install (module name)` is used to install a particular module of interest. In this case, the module installed is (insert module), displayed by the command `marketplace install recon/companies-domains/viewdns_reverse_whois`.
+
+**Step 6: Loading Installed Module**
+(insert image)
+
+The command `modules load recon/companies-domains/viewdns_reverse_whois` is used to load the installed module.
+
+**Step 7: Setting The Source and Run The Source**
+(insert image)
+
+The command `options set SOURCE (domain name)` is used to set the source and run it. For the demonstration following the tutorial from GeeksForGeeks, google.com was used as the source.
 
 ## 3. Hping3
 
@@ -76,7 +109,7 @@ NMAP also provides service version detection, emphasizing that accurate service 
 - Sharadin, G. (n.d.). What is Cybersecurity Reconnaissance | Types & Protection | Imperva. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
 **Recon-ng**
-1. ref-1
+- GeeksforGeeks. (2025, July 23). _Reconng Information gathering tool in Kali Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/recon-ng-installation-on-kali-linux/
 
 **Hping3**
 1. ref-1
