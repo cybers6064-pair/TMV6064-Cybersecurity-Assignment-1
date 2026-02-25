@@ -25,7 +25,7 @@ controlled environment or on authorized targets.
 - Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
 - Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent.
 
-**Step-by-Step Execution**  
+**Step-by-Step Execution:**  
 
 **Step 1: Creating a Backdoor**
 (insert ss)  
@@ -42,6 +42,27 @@ controlled environment or on authorized targets.
 - Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
 - Encrypted Communications: Secures the traffic between the attacker and the web server.
 - Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools.
+
+**Step-by-Step Execution:**  
+
+**Step 1: Generating Payload**  
+(insert ss)  
+**Command:** `weevely generate <password> <filename.php>`  
+**Reason of command:** This command crafts the obfuscated PHP backdoor file and locks it with a specific password so only the attacker can access the session.  
+**Step 2: Uploading Payload**  
+(insert ss)  
+**Action:** Upload the generated PHP file in the *DVWA* file upload vulnerability.  
+**Reason of action:** To physically place the backdoor onto the target server's file system so the web server can execute it.  
+**Step 3: Connecting to the Backdoor**  
+**Command:** `weevely <Target_URL/filename.php> <password>`  
+**Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.  
+(insert ss)  
+**Command:** `system_info`  
+**Reason of command:**  
+**Command:** `file_ls`  
+**Reason of command:**  
+
+
 
 
 
