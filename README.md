@@ -1,6 +1,8 @@
 # TMV6064-Cybersecurity-Assignment-1
 Welcome, to our repository!    
 
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/d65b0d1d8e753a2fabe68da303adbe066c625215/cat_meme.jpg)
+
 This repository documents cybersecurity coursework assignment focused on penetration testing using Kali Linux tools. It covers reconnaissance and maintaining access phases, including tool research, feature analysis, step-by-step execution with original screenshots, source references, and a comparative discussion with conclusions.
 
 Pair Members:
