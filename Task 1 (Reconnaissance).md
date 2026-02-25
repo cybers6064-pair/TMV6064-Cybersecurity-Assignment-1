@@ -68,10 +68,10 @@ NMAP also provides service version detection, emphasizing that accurate service 
 
 ## References/Credits
 **NMAP**
-- Nmap. (n.d.). https://nmap.org/
-- _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
 - _A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.org/book/port-scanning-tutorial.html
+- _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
 - _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
+- Nmap. (n.d.). https://nmap.org/
 - Obialom, B. (2023, November 29). A guide to using NMAP on Kali Linux. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
 - Sharadin, G. (n.d.). What is Cybersecurity Reconnaissance | Types & Protection | Imperva. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
