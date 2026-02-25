@@ -54,7 +54,7 @@ Recon-ng is free and open source tool available on GitHub. Recon-ng is based upo
 
 ## 2.2 Step-by-Step Execution
 **Step 1: Installing Recon-ng on Kali Linux**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%201%20clone.png)
 
 The command `git clone https://github.com/lanmaster53/recon-ng` is used to install Recon-ng on Kali Linux.
 
