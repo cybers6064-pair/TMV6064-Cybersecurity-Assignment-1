@@ -54,6 +54,9 @@ skipping the host discovery. This also allows a faster scan.
 
 ## 3.3
 
+## Comparison of NMAP, Recon-ng, and Hping3
+(insert description)
+
 ## References/Credits
 **NMAP**
 1. Nmap. (n.d.). https://nmap.org/
