@@ -1,16 +1,15 @@
 Tool: NMAP
-Purpose:
 Reference/Credit: https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
 
-Features
+Three (3) Features:
 1. Host Discovery
-
+(image)
 
 2. Port Scanning
-<img src="https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/06adcd59a13564111bab750f978d501bc33fd12d/cat_meme.jpg">
-
+(image)
 Port Scanning is one of NMAP's key features. It is mainly used to scan and find available open ports using the command "nmap <host IP address or name>".
 Note that the command -Pn is used in this task due to the suggestion provided before the successful scan to assume that the host is active, as well as
 skipping the host discovery. This also allows a faster scan.
 
 3. Service Detection
+(image)
