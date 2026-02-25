@@ -58,35 +58,36 @@ Recon-ng is free and open source tool available on GitHub. Recon-ng is based upo
 
 The command `git clone https://github.com/lanmaster53/recon-ng` is used to install Recon-ng on Kali Linux.
 
+
 **Step 2: Downloading and Running Recon-ng**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%202%20download%20and%20run.png)
 
 The command `recon-ng` is used to download and Run Recon-ng.
 
 **Step 3: Create Workspace**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%203%20workspaces.png)
 
 The command `workspaces` is used to create a workspace to set up environment for reconnaissance in Recon-ng. Unnamed workspace uses default as its default workspace name.
 
 **Step 4: Marketplace Search**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%204%20marketplace%20search.png)
 
 The command `marketplace search` is used to display a list of modules for installation purpose.
 
 **Step 5: Module Installation**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%205%20install%20module.png)
 
 The command `marketplace install (module name)` is used to install a particular module of interest. In this case, the module installed is (insert module), displayed by the command `marketplace install recon/companies-domains/viewdns_reverse_whois`.
 
 **Step 6: Loading Installed Module**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%206%20load%20module.png)
 
 The command `modules load recon/companies-domains/viewdns_reverse_whois` is used to load the installed module.
 
 **Step 7: Setting The Source and Run The Source**
-(insert image)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%207%20insert%20source%20and%20run.png)
 
-The command `options set SOURCE (domain name)` is used to set the source and run it. For the demonstration following the tutorial from GeeksForGeeks, google.com was used as the source.
+The command `options set SOURCE (domain name)` is used to set the source and run it.
 
 ## 3. Hping3
 
