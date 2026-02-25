@@ -51,9 +51,18 @@ NMAP also provides service version detection, emphasizing that accurate service 
 Recon-ng is free and open source tool available on GitHub. Recon-ng is based upon Open Source Intelligence (OSINT), the easiest and useful tool for reconnaissance. Recon-ng interface is very similar to Metasploit 1 and Metasploit 2.Recon-ng provides a command-line interface that you can run on Kali Linux. This tool can be used to get information about our target(domain). The interactive console provides a number of helpful features, such as command completion and contextual help. Recon-ng is a Web Reconnaissance tool written in Python. It has so many modules, database interaction, built-in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted, and we can gather all information (GeeksforGeeks, 2025). For this demonstration, a tutorial from GeeksforGeeks was followed.
 
 ## 2.1 Key Features
-The three key features of Recon-ng are as follows:
+The three key features of Recon-ng are as follows (GeeksforGeeks, 2025):
 
-## 2.2 Step-by-Step Execution
+### 2.1.1 Comprehensive Information-Gathering Modules
+Recon‑ng offers a wide variety of specialized modules that can perform tasks, such as subdomain discovery, reverse WHOIS lookups, and other reconnaissance activities. Users can load, configure, and run these modules to collect targeted information efficiently.
+
+### 2.1.2 Marketplace and Modular Design
+Recon‑ng offers a built-in marketplace where users can search, install, and manage modules using specific commands. Modules are categorized and organized in a standardized way, making reconnaissance tasks easier to conduct and scalable.
+
+### 2.1.3 Systematic Data Management
+Recon‑ng allows users to create dedicated workspaces to systematically store and manage collected reconnaissance data. Each workspace maintains its own database to ensure structured data organization for the econnaissance tasks.
+
+### 2.2 Step-by-Step Execution
 This section explains the step-by-step execution using Recon-ng, reproducing the tutorial provided by GeeksforGeeks (2025).
 
 ## Step 1: Installing Recon-ng on Kali Linux
@@ -61,17 +70,17 @@ This section explains the step-by-step execution using Recon-ng, reproducing the
 
 By default, Recon-ng is pre-installed on Kali Linux. The command `git clone https://github.com/lanmaster53/recon-ng` is used to install the latest version of Recon-ng provided on Github (Lanmaster, n.d.). Installing the latest version is essential to ensure the software tool runs smoothly.
 
-## Step 2: Downloading and Running Recon-ng
+### Step 2: Downloading and Running Recon-ng
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%202%20download%20and%20run.png)
 
 The command `recon-ng` is used to download or run/start Recon-ng, as shown in the image above. Entering this command ensures that the user of the software tool has entered the Recon-ng interactive shell, changing the shell prompt from `kali@kali` to `[recon-ng][default]` **(as shown in Step 3: Create Workspace)** to indicate a successful change.
 
-## Step 3: Creating Workspace
+### Step 3: Creating Workspace
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%203%20workspaces.png)
 
 The command `workspaces` is used to create a workspace within Recon-ng. The name of the workspace is customizable, however, unnamed workspace automatically uses 'default' as its default workspace name. In Recon-ng, creating a workspace is to ensure that all located and collected data are systematically stored within a dedicated database specific to that workspace (_Recon-NG Tutorial_, 2022).
 
-## Step 4: Discovering Module Through Marketplace
+### Step 4: Discovering Module Through Marketplace
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%204%20marketplace%20search.png)
 
 The command `marketplace search` is used to display a list of available modules, allowing users to explore into reconnaissance and open-sour intelligence activities (_Recon-NG Tutorial_, 2022). There are five (5) module categories which are:
@@ -84,30 +93,33 @@ The command `marketplace search` is used to display a list of available modules,
 
 As shown in the image above, using `marketplace search` command provides a complete table that includes information such as module version, installation status (installed or not installed), last updated date, dependencies, and required keys (_Recon-NG Tutorial_, 2022). Recon-ng utilizes a variety of modules, which are specialized plugins designed to execute reconnaissance tasks. Modules are organized dynamically rather than through traditional file structures to allow efficient discovery, installation, and updates. These modules follow a standardized naming convention, such as `recon/companies-domains/viewdns_reverse_whois`, that indicates the module category (recon), input–output relationship (companies-domains), and specific function (viewdns_reverse_whois). Additionally, modules are logically categorized based on data sources and targets, such as domain-based, company-based, contact-based, host-based, and network-based modules. Each module provides detailed information regarding its purpose, configuration options, and requirements to allow users to understand and configure it appropriately before use (Marc, 2025).
 
-## Step 5: Installing Module
+### Step 5: Installing Module
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%205%20install%20module.png)
 
 The command `marketplace install <module name>` is used to install a particular module based on user requirements. In this case, the module installed is `recon/companies-domains/viewdns_reverse_whois`, forming the full command as follows: `marketplace install recon/companies-domains/viewdns_reverse_whois`. The selected module utilizes company information as a starting point for reconnaissance activities, such as company profile gathering (Marc, 2025).
 
-## Step 6: Loading Installed Module
+### Step 6: Loading Installed Module
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%206%20load%20module.png)
 
 The command `modules load <module name>` is for loading the installed module. For the demonstration, the full command used is `modules load recon/companies-domains/viewdns_reverse_whois`. The shell prompt updates to include the module name at the end, which indicates that the user is now operating within the context of the loaded module (Marc, 2025). For example, as shown in the image above, the `[recon-ng][default]` prompt was updated to `[recon-ng][default][viewdns_reverse_whois]` after loading the installed module.
 
-## Step 7: Setting The Source and Run The Source
+### Step 7: Setting The Source and Run The Source
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%207%20insert%20source%20and%20run.png)
 
 The command `options set SOURCE <domain name or value>` is used to define the source after loading the module. By default, the **SOURCE** option is set to 'default', which applies to all domains stored in the user’s workspace domain table. Each module may contain different configuration options and corresponding values depending on its function. Once the required options are configured, the `run` command is executed to initiate the module (Marc, 2025) (for the demonstration, the 403 error indicates that the server understood the request but refused to process it (_403 Forbidden_, 2025). Therefore, the demonstration was halted to ensure safety as a third-party domain name was was used as the SOURCE following the tutorial). As a result, the system typically displays real-time progress updates followed by a summary of the results (Marc, 2025).
 
 ## 3. Hping3
 
-## 3.1
+### 3.1
 
-## 3.2
+### 3.2
 
-## 3.3
+### 3.3
 
-## Comparison of NMAP, Recon-ng, and Hping3
+## Comparison Discussion
+(insert description)
+
+## Conclusion
 (insert description)
 
 ## References/Credits
@@ -116,8 +128,8 @@ The command `options set SOURCE <domain name or value>` is used to define the so
 - _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
 - _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
 - Nmap. (n.d.). https://nmap.org/
-- Obialom, B. (2023, November 29). A guide to using NMAP on Kali Linux. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
-- Sharadin, G. (n.d.). What is Cybersecurity Reconnaissance | Types & Protection | Imperva. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
+- Obialom, B. (2023, November 29). _A guide to using NMAP on Kali Linux_. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
+- Sharadin, G. (n.d.). _What is Cybersecurity Reconnaissance | Types & Protection | Imperva_. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
 **Recon-ng**
 - _403 Forbidden_. (2025, July 4). MDN. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403
