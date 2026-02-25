@@ -1,5 +1,5 @@
 # Task 2: Maintaining Access  
-by Elisha Sendie
+By: Elisha Sendie
 ## Disclaimer  
 **This project is for educational purposes only. All testing was performed in a
 controlled environment or on authorized targets.
@@ -19,7 +19,7 @@ controlled environment or on authorized targets.
 (insert ss)  
 **Command**: `blahblah`
 
-## Tool 1: Webshells  
+## 1. Webshells  
 **Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
 **Key Features:**  
 "- Simplicity: Small enough to be hidden inside legitimate website code without drawing attention.
@@ -37,7 +37,7 @@ controlled environment or on authorized targets.
 **Action:** Upload php file in DVWA and accessed via web browser at `.../simple_shell.php?cmd=whoami`  
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
-## Tool 2: Weevely  
+## 2. Weevely  
 " **Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"―  *Kali Linux*  
 **Key Features:**  
 "- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
@@ -63,7 +63,7 @@ controlled environment or on authorized targets.
 **Command:** `file_ls`  
 **Reason of command:** This command allows the attacker to silently map out the target's file system. Instead of guessing where things are, the attacker uses this to browse the server's folders to locate sensitive information such as database configuration files with hardcoded passwords, without triggering security alarms. 
 
-## Tool 3: Cryptcat  
+## 3. Cryptcat  
 CryptCat provides a two-way encrypted version of the standard NetCat enhanced program, where it functions as the most basic Unix utility tool, reading and publishing data across network connections (Chandel, 2020). CryptCat encrypts data that users send across a network using either the TCP or UDP protocol, and it acts as a dependable back-end tool that users can easily utilize with scripts (Chandel, 2020).  
 **Key Features:**
 "- Military-Grade Twofish Encryption: Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
