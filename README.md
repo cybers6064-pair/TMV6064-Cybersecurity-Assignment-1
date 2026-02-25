@@ -6,12 +6,10 @@ Welcome, to our repository!
 This repository documents cybersecurity coursework assignment focused on penetration testing using Kali Linux tools. It covers reconnaissance and maintaining access phases, including tool research, feature analysis, step-by-step execution with original screenshots, source references, and a comparative discussion with conclusions.
 
 Pair Members:
-1.  Name: Nur Zulaikha Nadhirah binti Adi  
-    Matric No: 25030269  
+1.  Name: Nur Zulaikha Nadhirah binti Adi   
     Role: Documentation for Task 1 (Reconnaissance Phase)  
 
-2.  Name: Elisha Sendie Anak Richard Tini  
-    Matric No: 25030128  
+2.  Name: Elisha Sendie Anak Richard Tini   
     Role: Documentation for Task 2 (Maintaining Access Phase)  
 
 Course Code & Name: TMV6064 Cyber Security  
