@@ -62,10 +62,10 @@ Recon‑ng offers a built-in marketplace where users can search, install, and ma
 ### 2.1.3 Systematic Data Management
 Recon‑ng allows users to create dedicated workspaces to systematically store and manage collected reconnaissance data. Each workspace maintains its own database to ensure structured data organization for the econnaissance tasks.
 
-### 2.2 Step-by-Step Execution
+## 2.2 Step-by-Step Execution
 This section explains the step-by-step execution using Recon-ng, reproducing the tutorial provided by GeeksforGeeks (2025).
 
-## Step 1: Installing Recon-ng on Kali Linux
+### Step 1: Installing Recon-ng on Kali Linux
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%201%20clone.png)
 
 By default, Recon-ng is pre-installed on Kali Linux. The command `git clone https://github.com/lanmaster53/recon-ng` is used to install the latest version of Recon-ng provided on Github (Lanmaster, n.d.). Installing the latest version is essential to ensure the software tool runs smoothly.
