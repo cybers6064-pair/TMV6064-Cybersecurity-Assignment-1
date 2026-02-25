@@ -7,8 +7,7 @@ Features
 
 
 2. Port Scanning
-<img src="https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/06adcd59a13564111bab750f978d501bc33fd12d/cat_meme.jpg" width="200" alt="An image of an Octocat" />
-
+<img src="https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/06adcd59a13564111bab750f978d501bc33fd12d/cat_meme.jpg">
 
 Port Scanning is one of NMAP's key features. It is mainly used to scan and find available open ports using the command "nmap <host IP address or name>".
 Note that the command -Pn is used in this task due to the suggestion provided before the successful scan to assume that the host is active, as well as
