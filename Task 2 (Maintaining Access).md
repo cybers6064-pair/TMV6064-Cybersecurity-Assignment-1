@@ -109,6 +109,7 @@ This section explains the step-by-step execution using Weevely, reproducing the 
 **Reason of action:** To physically place the backdoor onto the target server's file system so the web server can execute it.  
 ### Step 3: Connecting to the Backdoor    
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/831fdc5cc19967697cd3660ad16b40410f68f06e/Task%202%20images/Weevely3.png)  
+![image alt]()  
 **Command:** `weevely <Target_URL/filename.php> <password>`  
 **Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.    
 **Command:** `system_info`  
