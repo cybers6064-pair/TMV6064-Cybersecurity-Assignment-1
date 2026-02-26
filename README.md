@@ -17,5 +17,6 @@ This repository documents **cybersecurity coursework assignment** focused on pen
 **Semester & Session:** Semester 2, Session 2025/2026
 
 ## Disclaimer
-**This project is for educational purposes only. All testing was performed in a controlled environment or on authorized targets.  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/086ed149564a84031b389450c36c1e4457d62ca8/Readme%20images/quick-disclaimer-maclen-stanley.gif) **This project is for educational purposes only. All testing was performed in a controlled environment or on authorized targets.  
+
 
