@@ -16,6 +16,6 @@ This repository documents **cybersecurity coursework assignment** focused on pen
 **Course Instructor:** Dr Ling Yeong Tyng  
 **Semester & Session:** Semester 2, Session 2025/2026
 
-## ![image alt]() Disclaimer
+## Disclaimer
 **This project is for educational purposes only. All testing was performed in a controlled environment or on authorized targets.  
 
