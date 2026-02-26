@@ -54,9 +54,9 @@ The `create database` allocates a dedicated storage space just for this applicat
 **Action:** Navigating to `http://127.0.x.x/DVWA/setup.php` in the web browser and reviewing the Setup Check.  
 **Reason for action:** While the MariaDB database was created in the terminal, it is currently empty. The DVWA setup page performs a system check to verify that all necessary backend components (like PHP modules) are running correctly. Once verified, clicking the "Create / Reset Database" button at the bottom of this page triggers the application to automatically build the necessary tables and populate them with default data, completing the installation process.  
 ### Step 6: Verififcation & Dashboard Access  
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/58279cf79204c7ab360c41218e4da9de3bf6098d/Task%202%20images/DVWA8.png)    
 **Action:** Logging into the application with the default credentials (`admin / password`) and accessing the main DVWA Welcome screen.    
-This confirms the complete and successful installation of the target environment. The Apache web server is properly serving the PHP application, and the platform is successfully communicating with the newly created MariaDB backend. The left-hand navigation menu is now fully populated with the intentionally vulnerable modules, providing the exact sandbox environment needed to begin the post-exploitation and maintaining access phases of the lab.  
+**Reason of action:** This confirms the complete and successful installation of the target environment. The Apache web server is properly serving the PHP application, and the platform is successfully communicating with the newly created MariaDB backend. The left-hand navigation menu is now fully populated with the intentionally vulnerable modules, providing the exact sandbox environment needed to begin the post-exploitation and maintaining access phases of the lab.  
 
 # 1. Webshells  
 **Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others (Heath, 2023). An attacker can control the script and a *command injection vulnerability* occurs (Heath, 2023).  
