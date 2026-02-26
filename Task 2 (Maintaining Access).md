@@ -150,7 +150,7 @@ Based on our experience using these tools, all of it manage to successfully main
   On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
 
 # Conclusion
-In conclusion,  
+In conclusion, this maintaining access task has managed to demonstrate the critical post-exploitation concept from an offensive persepective. An attacker ensures highly resilient access to a compromised system by developing multiple persistence mechanisms across different network layers, ranging from Application Layer web backdoors like Weevely and a simple PHP shell, to a Transport Layer encrypted tunnel using Cryptcat. This approach guarantees that even if a network administrator discovers and remediates one vulnerability, such as taking the Apache web server offline to neutralize the webshells, the underlying operating system remains fully accessible through an independent, encrypted network connection. Moreover, demonstrating these varied persistence techniques shows why real-world defenders must implement robust, multi-layered security measures to fully secure an environment. 
 
 # References
 Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
