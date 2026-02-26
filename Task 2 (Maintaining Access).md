@@ -142,7 +142,7 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 **Action:** Executing commands such as `id` and `ls` on the listener terminal.  
 **Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.  
 
-## Comparative Discussion  
+# Comparative Discussion  
 Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
   
   The simple *Webshell* and *Weevely* both function at the Application Layer as web backdoors, meaning their persistence relies entirely on the target's Apache web server remaining active. Even so, they differ in complexity. The *Webshell* offers extreme stealth through a minimalist, stateless design that blends into normal HTTP traffic, whereas *Weevely* provides a comprehensive, encrypted framework packed with automated enumeration modules.  
