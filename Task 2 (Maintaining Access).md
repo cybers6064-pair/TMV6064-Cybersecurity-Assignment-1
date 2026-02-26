@@ -19,7 +19,7 @@ For this particular task (Maintaining Access), a web back door and tunnelling te
 
 **Tools:** *Webshells, Weevely, Cryptcat*
 
-# Target Environment Setup: Installing DVWA  
+## Target Environment Setup: Installing DVWA  
 The *Damn Vulnerable Web Application (DVWA)* is a PHP/MariaDB web application that is vulnerable. It was developed as an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to help both students & teachers to learn about web application security in a controlled class room environment (Wood, 2022).
 
 Such vulnerable web application was used in this task in order to perform the said post-exploitation techniques. *DVWA* was manually installed and configured on the local *Kali Linux* Apache server.
@@ -58,7 +58,7 @@ The `create database` allocates a dedicated storage space just for this applicat
 **Action:** Logging into the application with the default credentials (`admin / password`) and accessing the main DVWA Welcome screen.    
 **Reason of action:** This confirms the complete and successful installation of the target environment. The Apache web server is properly serving the PHP application, and the platform is successfully communicating with the newly created MariaDB backend. The left-hand navigation menu is now fully populated with the intentionally vulnerable modules, providing the exact sandbox environment needed to begin the post-exploitation and maintaining access phases of the lab.  
 
-# 1. Webshells  
+## 1. Webshells  
 **Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others (Heath, 2023). An attacker can control the script and a *command injection vulnerability* occurs (Heath, 2023).  
 
 ## 1.1 Key Features  
@@ -84,7 +84,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Action:** Upload php file in DVWA and accessed via web browser at `.../simple_shell.php?cmd=whoami`  
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
-# 2. Weevely  
+## 2. Weevely  
 "**Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"― *Kali Linux (2025)*  
 
 ## 2.1 Key Features  
@@ -117,7 +117,7 @@ This section explains the step-by-step execution using Weevely, reproducing the 
 **Command:** `file_ls`  
 **Reason of command:** This command allows the attacker to silently map out the target's file system. Instead of guessing where things are, the attacker uses this to browse the server's folders to locate sensitive information such as database configuration files with hardcoded passwords, without triggering security alarms. 
 
-# 3. Cryptcat  
+## 3. Cryptcat  
 CryptCat provides a two-way encrypted version of the standard NetCat enhanced program, where it functions as the most basic Unix utility tool, reading and publishing data across network connections (Chandel, 2020). CryptCat encrypts data that users send across a network using either the TCP or UDP protocol, and it acts as a dependable back-end tool that users can easily utilize with scripts (Chandel, 2020).  
 
 ## 3.1 Key Features
@@ -145,17 +145,17 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 **Action:** Executing commands such as `id` and `ls` on the listener terminal.  
 **Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.  
 
-# Comparative Discussion  
+## Comparative Discussion  
 Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
   
   The simple *Webshell* and *Weevely* both function at the Application Layer as web backdoors, meaning their persistence relies entirely on the target's Apache web server remaining active. Even so, they differ in complexity. The *Webshell* offers extreme stealth through a minimalist, stateless design that blends into normal HTTP traffic, whereas *Weevely* provides a comprehensive, encrypted framework packed with automated enumeration modules.  
 
   On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
 
-# Conclusion
+## Conclusion
 In conclusion, this maintaining access task has managed to demonstrate the critical post-exploitation concept from an offensive persepective. An attacker ensures highly resilient access to a compromised system by developing multiple persistence mechanisms across different network layers, ranging from Application Layer web backdoors like Weevely and a simple PHP shell, to a Transport Layer encrypted tunnel using Cryptcat. This approach guarantees that even if a network administrator discovers and remediates one vulnerability, such as taking the Apache web server offline to neutralize the webshells, the underlying operating system remains fully accessible through an independent, encrypted network connection. Moreover, demonstrating these varied persistence techniques shows why real-world defenders must implement robust, multi-layered security measures to fully secure an environment. 
 
-# References
+## References
 Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
 
 Cloud Learning (2019, December 10). *Web Hacking for Begginers #19 How to Use Weevely PHP Backdoor* [Video]. Youtube. https://youtu.be/Y1gY5En6MsM?si=bVOiri_LUoSXNeHl  
