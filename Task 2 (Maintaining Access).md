@@ -150,7 +150,7 @@ Based on our experience using these tools, all of it manage to successfully main
   On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
 
 # Conclusion
-(Write a brief concluding sentence about how relying on multiple persistence methods ensures an attacker maintains access even if one backdoor is discovered and patched).  
+In conclusion,  
 
 # References
 Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
