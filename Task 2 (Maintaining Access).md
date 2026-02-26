@@ -29,7 +29,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
   
 ### Step 1: Downloading the Source Code  
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/fe8a7345115b65b0d4d7e6cf8be538af21bf84f0/Task%202%20images/DVWA1.png)    
-**Command**: `cd /var/www/html`  
+**Command(s)**: `cd /var/www/html`  
 `sudo git clone https://github.com/digininja/DVWA.git`  
 **Reason of command:** The `cd` command navigates into the Apache web server's default public directory. The `git clone` command reaches out to GitHub and downloads the entire repository of DVWA's raw PHP source code directly into that folder so the web server can host it.      
 ### Step 2: Creating Configuration File  
