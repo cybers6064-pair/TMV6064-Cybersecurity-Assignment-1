@@ -100,17 +100,17 @@ Allows for system enumeration, file management, and lateral movement without upl
 This section explains the step-by-step execution using Weevely, reproducing the tutorial and explanation provided by Cloud Learning (2019).  
 
 ### Step 1: Generating Payload  
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/d032773c527eb89b8b2412ba2192173bbff8ac96/Task%202%20images/Weevely1.png)    
 **Command:** `weevely generate <password> <filename.php>`  
 **Reason of command:** This command crafts the obfuscated PHP backdoor file and locks it with a specific password so only the attacker can access the session.  
 ### Step 2: Uploading Payload  
-(insert ss)  
+![image alt]  
 **Action:** Upload the generated PHP file in the *DVWA* file upload vulnerability.  
 **Reason of action:** To physically place the backdoor onto the target server's file system so the web server can execute it.  
-### Step 3: Connecting to the Backdoor  
+### Step 3: Connecting to the Backdoor    
+![image alt]
 **Command:** `weevely <Target_URL/filename.php> <password>`  
-**Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.  
-(insert ss)  
+**Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.    
 **Command:** `system_info`  
 **Reason of command:** This command performs automated system reconnaissance. It instantly tells the attacker what operating system is running, the kernel version, and the current user privileges. This is the critical first step in planning a "Privilege Escalation" attack to become the root administrator.  
 **Command:** `file_ls`  
