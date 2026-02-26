@@ -13,7 +13,7 @@ In Cybersecurity, reconnaissance refers to the initial phase of a cyber attack t
 - Hping3
 
 ### Objectives
-To demonstrate preliminary information gathering about a target before taking action (such as conducting an investigation) by using three reconnaissance tools, for the purpose of a more effective and strategic planning prior to initiating the attack.
+To demonstrate preliminary information gathering about a target before taking action (such as conducting an investigation) by using three reconnaissance tools within the Kali Linux environment, for the purpose of a more effective and strategic planning prior to initiating the attack.
 
 ## 1. NMAP (Network Mapper)
 NMAP (Network Mapper) is a free, open-source tool used for network discovery and is pre-installed in Kali Linux. It is utilized for security auditing, assisting administrators to identify active hosts, running services, operating systems, and firewall configurations on a network as it is essential to understand a target’s structure and potential vulnerabilities before taking further action. NMAP is designed to scan both large networks and single hosts, offering flexibility, robustness, and compatibility with major operating systems such as Linux, Windows, and macOS. Additionally, NMAP also includes additional tools like Zenmap for graphical interface support. Due to its effectiveness, ease of use, and strong community support, NMAP has become widely used for reconnaissance task (Nmap, n.d.). Furthermore, this demonstration dives deeper into the three key features of NMAP that explains why it is useful and effective for reconnaissance and security assessments, namely **Host Discovery**, **Port Scanning**, and **Service Detection**, and following the tutorial posted by Obialom (2023).
