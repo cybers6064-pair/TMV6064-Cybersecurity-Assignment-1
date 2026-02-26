@@ -43,11 +43,13 @@ This section explains the step-by-step execution using Webshell, reproducing the
 ### Step 4: Provisioning the Database & User    
 **Command:** `sudo mysql -u root -p`    
 **Reason of command:** This logs into the MariaDB command-line monitor as the administrative root user, allows building the backend infrastructure for DVWA.  
+
 **SQL Commands Executed:**  
 `create database dvwa;`  
 `create user dvwa@127.0.x.x identified by '....';`  
 `grant all on dvwa.* to dvwa@127.0.x.x;`  
 `flush privileges;`  
+
 The `create database` allocates a dedicated storage space just for this application. The `create user` creates a specific database user with the exact password that matches the `config.inc.php` file from Step 2. Meanwhile, `grant all` gives new user full administrative rights over the dvwa database, explicitly binding it to the `127.0.x.x` local IP to fix socket connection issues. The `flush privileges` forces the database to immediately reload its security tables, locking in our new user permissions.  
 ### Step 5: Finalizing Setup @ Web Interface
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/472bbb07cf33c0d668826913fa0a67be3d7751d3/Task%202%20images/DVWA7.png)  
