@@ -9,7 +9,8 @@ controlled environment or on authorized targets.
 *Kali Linux* comes with multiple pre-installed hacking tools for all phases of ethical hacking. Under the post-exploitation category there are several hacking tools that are meant for maintaining access. The tools are classified as follows:   
 - OS back doors
 - Tunnelling and exfiltration
-- Web back doors  
+- Web back doors
+
 For this particular task (Maintaining Access), a web back door and tunnelling techniques was explored and configured using three distinct tools.
  
 **Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools.  
