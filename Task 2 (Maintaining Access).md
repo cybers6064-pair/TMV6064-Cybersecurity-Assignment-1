@@ -40,7 +40,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 (insert ss)  
 **Command:** `sudo service mariadb start`  
 **Reason of command:** Before the application can function, the backend database service must be running. This command boots up the MariaDB (MySQL) server so it is ready to accept connections.    
-**Step 4: Provisioning the Database & User**
+**Step 4: Provisioning the Database & User**  
 (insert ss)  
 **Command:** `sudo mysql -u root -p`  
 **Reason of command:** This logs into the MariaDB command-line monitor as the administrative root user, allows building the backend infrastructure for DVWA.  
