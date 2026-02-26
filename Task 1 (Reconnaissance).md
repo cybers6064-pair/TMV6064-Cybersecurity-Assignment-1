@@ -128,18 +128,19 @@ In this demonstration, 5 SYN packets were sent, and 3 responses were received, r
 ### 3.2 Network Path Discovery (Tracerouting)
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-traceroute.png)
 
-The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 <target ip address>`, which helps to identify the network path between the source and the target using TCP packets instead of ICMP. The user can use Hping3 to trace the path taken by packets to reach their destination (GeeksforGeeks, 2023; Vaishnavi, 2025). The commands breakdown is as follows:
+The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 <target ip address>`, which helps to identify the network path between the source and the target using TCP packets instead of ICMP (GeeksforGeeks, 2023; Vaishnavi, 2025). Unlike traditional traceroute tools that rely on ICMP packets, Hping3 utilizes TCP SYN packets, which are less commonly blocked by firewalls. This makes TCP-based tracerouting more effective in network environments where ICMP traffic is restricted or filtered (Otw, 2023). The commands breakdown is as follows:
 
 - **sudo:** to access root privileges
 - **--traceroute:** to trace the path taken by packets to reach their destination
 - **-V:** verbose (detailed) output
 - **-S:** Sets the SYN flag bit to initiate a TCP connection attempt to determine port status based on the returned TCP flags
+- **-p 80:** Specifies port 80 (HTTP services) to check whether a web server is running
 - **-c 4:** Sends four packets to improve scan reliability and reduce the impact of packet loss
 
 ### 3.3 Banner Grabbing
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-banner-grabbing.png)
 
-The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 1 192.168.1.100 <target ip address>`.
+The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 5 <target ip address>`.
 
 ## Comparison Discussion
 (insert description)
@@ -166,4 +167,5 @@ The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 1 192.16
 **Hping3**
 - Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
 - GeeksforGeeks. (2023, November 4). _hping3 Command in Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/hping3-command-in-linux/
+- Otw. (2023, December 10). _Port Scanning and Reconnaissance with Hping3_. https://hackers-arise.com/port-scanning-and-reconnaissance-with-hping3/
 - Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
