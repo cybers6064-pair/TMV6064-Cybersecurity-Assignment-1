@@ -12,7 +12,7 @@ In Cybersecurity, reconnaissance refers to the initial phase of a cyber attack t
 - Recon-ng
 - Hping3
 
-### Objectives
+### Objective
 To demonstrate preliminary information gathering about a target before taking action (such as conducting an investigation) by using three reconnaissance tools within the Kali Linux environment, for the purpose of a more effective and strategic planning prior to initiating the attack.
 
 ## 1. NMAP (Network Mapper)
