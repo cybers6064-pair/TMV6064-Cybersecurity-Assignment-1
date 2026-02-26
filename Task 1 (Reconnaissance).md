@@ -112,12 +112,25 @@ The command `options set SOURCE <domain name or value>` is used to define the so
 Hping3 is a powerful and sophisticated open-source packet crafting tool widely used by cybersecurity professionals, including penetration testers and network administrators. It is mainly utilized for security auditing, firewall testing, network scanning, and advanced reconnaissance, while also enabling users to perform highly detailed network analysis. Hping3 operates through a command-line interface on Unix-like systems. Although it appears similar to a simple ping tool, it actually provides full control over the TCP/IP protocol. Its three key features are Port Scanning, Firewall Testing, and Network Path Discovery (Tracerouting). The tool is commonly used in ethical hacking, penetration testing, and network diagnostics, making it highly important in the cybersecurity field. Unlike basic ping tools that rely only on ICMP, Hping3 allows users to send TCP, UDP, and RAW-IP packets with customizable flags and payloads. This capability enables in-depth analysis of target systems, firewall behavior, packet filtering mechanisms, and network path detection (Vaishnavi, 2025). The following demonstration further explores these features, reproducing the tutorial conducted by WebAsha Technologies (Vaishnavi, 2025).
 
 ### 3.1 Port Scanning
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-port-scanning.png)
 
+The command used for Hping3 port scanning is `sudo hping3 -S -p 80 -c 5 <target ip address>`. The breakdown of the command is as follows:
 
-### 3.2 Firewall Testing
+- **-S:**
+- **-p 80:**
+- **-c 5:**
 
+Port scanning in Hping3...
 
-### 3.3 Network Path Discovery (Tracerouting)
+### 3.2 Network Path Discovery (Tracerouting)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-traceroute.png)
+
+The command used for Hping3 tracerouting is `hping3 --traceroute -V -S -p 80 <target ip address>`
+
+### 3.3 Banner Grabbing
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-banner-grabbing.png)
+
+The command used for Hping3 banner grabbing is `hping3 -S -p 21 -c 1 192.168.1.100 <target ip address>`
 
 ## Comparison Discussion
 (insert description)
