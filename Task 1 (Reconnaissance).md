@@ -109,28 +109,37 @@ The command `modules load <module name>` is for loading the installed module. Fo
 The command `options set SOURCE <domain name or value>` is used to define the source after loading the module. By default, the **SOURCE** option is set to 'default', which applies to all domains stored in the user’s workspace domain table. Each module may contain different configuration options and corresponding values depending on its function. Once the required options are configured, the `run` command is executed to initiate the module (Marc, 2025) (for the demonstration, the 403 error indicates that the server understood the request but refused to process it (_403 Forbidden_, 2025). Therefore, the demonstration was halted to ensure safety as a third-party domain name was was used as the SOURCE following the tutorial). As a result, the system typically displays real-time progress updates followed by a summary of the results (Marc, 2025).
 
 ## 3. Hping3
-Hping3 is a powerful and sophisticated open-source packet crafting tool widely used by cybersecurity professionals, including penetration testers and network administrators. It is mainly utilized for security auditing, firewall testing, network scanning, and advanced reconnaissance, while also enabling users to perform highly detailed network analysis. Hping3 operates through a command-line interface on Unix-like systems. Although it appears similar to a simple ping tool, it actually provides full control over the TCP/IP protocol. Its three key features are Port Scanning, Firewall Testing, and Network Path Discovery (Tracerouting). The tool is commonly used in ethical hacking, penetration testing, and network diagnostics, making it highly important in the cybersecurity field. Unlike basic ping tools that rely only on ICMP, Hping3 allows users to send TCP, UDP, and RAW-IP packets with customizable flags and payloads. This capability enables in-depth analysis of target systems, firewall behavior, packet filtering mechanisms, and network path detection (Vaishnavi, 2025). The following demonstration further explores these features, reproducing the tutorial conducted by WebAsha Technologies (Vaishnavi, 2025).
+Hping3 is an advanced open-source packet crafting tool widely used by cybersecurity professionals, such as penetration testers and network administrators. It operates via a command-line interface on Unix-like systems and provides precise control over TCP/IP protocols. It is primarily employed for security auditing, firewall analysis, network scanning, and advanced reconnaissance, while also supporting detailed packet‑level examination of network communications. Unlike traditional ping tools that rely mainly on ICMP, Hping3 can send TCP, UDP, and RAW-IP packets with customizable flags and payloads, which allows detailed analysis of target systems, firewall behavior, packet filtering, and network routes. These capabilities make Hping3 a valuable tool for ethical hacking, penetration testing, and network diagnostics (Vaishnavi, 2025). Furthermore, its key features, which are port scanning, firewall testing, and network path discovery (tracerouting) are demonstrated from Section 3.1 to 3.3, following the tutorial provided by WebAsha (Vaishnavi, 2025).
 
 ### 3.1 Port Scanning
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-port-scanning.png)
 
-The command used for Hping3 port scanning is `sudo hping3 -S -p 80 -c 5 <target ip address>`. The breakdown of the command is as follows:
+The command used for Hping3 port scanning is `sudo hping3 -S -p 80 -c 5 <target ip address>`. The breakdown of the command is as follows (Achipra, 2025; GeeksforGeeks, 2023; Vaishnavi, 2025):
 
-- **-S:**
-- **-p 80:**
-- **-c 5:**
+- **sudo:** for root privileges as Hping3 crafts raw TCP packets require administrative access
+- **-S:** Sets the SYN flag bit to initiate a TCP connection attempt to determine port status based on the returned TCP flags
+- **-p 80:** Specifies port 80 (HTTP services) to check whether a web server is running
+- **-c 5:** Sends five packets to improve scan reliability and reduce the impact of packet loss
 
-Port scanning in Hping3...
+The command works by performing a TCP SYN scan on port 80 to determine its status, and the **-S** option enables the SYN flag in the crafted TCP packet. When this packet is sent to the target, an open port responds with a SYN-ACK packet, which indicates that port 80 is open and an HTTP service is active, whereas a closed port responds with a RST-ACK packet (Achipra, 2025).
+
+In this demonstration, 5 SYN packets were sent, and 3 responses were received, resulting in 40% packet loss. The returned TCP flags were RST‑ACK (RA), which indicates that port 80 is closed. The packet loss may have occurred due to firewall filtering. However, the received responses were sufficient to determine the port state. Hence, by checking these responses using the command, Hping3 can determine whether the target port is open or closed.
 
 ### 3.2 Network Path Discovery (Tracerouting)
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-traceroute.png)
 
-The command used for Hping3 tracerouting is `hping3 --traceroute -V -S -p 80 <target ip address>`
+The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 <target ip address>`, which helps to identify the network path between the source and the target using TCP packets instead of ICMP. The user can use Hping3 to trace the path taken by packets to reach their destination (GeeksforGeeks, 2023; Vaishnavi, 2025). The commands breakdown is as follows:
+
+- **sudo:** to access root privileges
+- **--traceroute:** to trace the path taken by packets to reach their destination
+- **-V:** verbose (detailed) output
+- **-S:** Sets the SYN flag bit to initiate a TCP connection attempt to determine port status based on the returned TCP flags
+- **-c 4:** Sends four packets to improve scan reliability and reduce the impact of packet loss
 
 ### 3.3 Banner Grabbing
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-banner-grabbing.png)
 
-The command used for Hping3 banner grabbing is `hping3 -S -p 21 -c 1 192.168.1.100 <target ip address>`
+The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 1 192.168.1.100 <target ip address>`.
 
 ## Comparison Discussion
 (insert description)
@@ -155,4 +164,6 @@ The command used for Hping3 banner grabbing is `hping3 -S -p 21 -c 1 192.168.1.1
 - _Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/recon-ng-tutorial/#:~:text=When%20using%20Recon%2Dng%20workspaces%20%2C,%5Brecon%2Dng%5D%5Bdefault%5D%20%3E%20workspaces%20create%20example_name
 
 **Hping3**
-- Vaishnavi. (2025, June 18). What is Hping3 Tool? Features, installation, commands & use cases explained. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
+- Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
+- GeeksforGeeks. (2023, November 4). _hping3 Command in Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/hping3-command-in-linux/
+- Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
