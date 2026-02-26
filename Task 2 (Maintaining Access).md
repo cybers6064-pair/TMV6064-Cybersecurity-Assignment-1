@@ -1,5 +1,5 @@
 # Task 2: Maintaining Access  
-By: Elisha Sendie
+**By: Elisha Sendie**
 ## Disclaimer  
 **This project is for educational purposes only. All testing was performed in a
 controlled environment or on authorized targets.  
