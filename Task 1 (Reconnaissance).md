@@ -52,10 +52,10 @@ As illustrated in the image above, the output is presented in a human-readable f
 NMAP also provides service version detection, emphasizing that accurate service and version detection is crucial for vulnerability assessments, identifying applicable exploits, and maintaining an accurate network inventory. NMAP’s version detection actively interrogates open ports with service-specific probes to reveal beyond the service type and version, but also additional details such as service configurations, SSH protocol numbers, Apache modules, configured hostnames, operating system, and device type (_Chapter 7. Service and Application Version Detection_, n.d.). This approach provides a more detailed and reliable understanding of what is truly running on the target system, enhancing the effectiveness of reconnaissance and security assessment activities. As shown in the image above, the results displayed are a clean list of port, port state, and its respective service and version using the command `nmap -Pn -sV <host IP>` that is used to identify which service version are running on the open ports. In this case, the -sV option is specifically used to enable service detection (Obialom, 2023). This command accurately identifies the exact services and software versions running on open ports, which is essential for determining potential vulnerabilities and supporting informed decision-making in subsequent security assessments.
 
 ## 2. Recon-ng
-Recon-ng is free and open source tool available on GitHub. Recon-ng is based upon Open Source Intelligence (OSINT), the easiest and useful tool for reconnaissance. Recon-ng interface is very similar to Metasploit 1 and Metasploit 2.Recon-ng provides a command-line interface that you can run on Kali Linux. This tool can be used to get information about our target(domain). The interactive console provides a number of helpful features, such as command completion and contextual help. Recon-ng is a Web Reconnaissance tool written in Python. It has so many modules, database interaction, built-in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted, and we can gather all information (GeeksforGeeks, 2025). For this demonstration, a tutorial from GeeksforGeeks was followed.
+Recon-ng is free and open source tool available on GitHub. Recon-ng is based upon Open Source Intelligence (OSINT), the easiest and useful tool for reconnaissance. Recon-ng interface is very similar to Metasploit 1 and Metasploit 2.Recon-ng provides a command-line interface that you can run on Kali Linux. This tool can be used to get information about our target(domain). The interactive console provides a number of helpful features, such as command completion and contextual help. Recon-ng is a Web Reconnaissance tool written in Python. It has so many modules, database interaction, built-in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted, and we can gather all information (GeeksforGeeks, 2025a). For this demonstration, a tutorial from GeeksforGeeks was followed.
 
 ### 2.1 Key Features
-The three key features of Recon-ng are as follows (GeeksforGeeks, 2025):
+The three key features of Recon-ng are as follows (GeeksforGeeks, 2025a):
 
 ### 2.1.1 Comprehensive Information-Gathering Modules
 Recon‑ng offers a wide variety of specialized modules that can perform tasks, such as subdomain discovery, reverse WHOIS lookups, and other reconnaissance activities. Users can load, configure, and run these modules to collect targeted information efficiently.
@@ -67,7 +67,7 @@ Recon‑ng offers a built-in marketplace where users can search, install, and ma
 Recon‑ng allows users to create dedicated workspaces to systematically store and manage collected reconnaissance data. Each workspace maintains its own database to ensure structured data organization for the econnaissance tasks.
 
 ### 2.2 Step-by-Step Execution
-This section explains the step-by-step execution using Recon-ng, reproducing the tutorial provided by GeeksforGeeks (2025).
+This section explains the step-by-step execution using Recon-ng, reproducing the tutorial provided by GeeksforGeeks (2025a).
 
 ### Step 1: Installing Recon-ng on Kali Linux
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-recon-ng/recon%20command%201%20clone.png)
@@ -132,7 +132,7 @@ In this demonstration, 5 SYN packets were sent, and 3 responses were received, r
 ### 3.2 Network Path Discovery (Tracerouting)
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-traceroute.png)
 
-The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 <target ip address>`, which helps to identify the network path between the source and the target using TCP packets instead of ICMP (GeeksforGeeks, 2023; Vaishnavi, 2025). Unlike traditional traceroute tools that rely on ICMP packets, Hping3 utilizes TCP SYN packets, which are less commonly blocked by firewalls. This makes TCP-based tracerouting more effective in network environments where ICMP traffic is restricted or filtered (Otw, 2023). The commands breakdown is as follows:
+The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 <target ip address>`, which helps to identify the network path between the source and the target using TCP packets instead of ICMP (GeeksforGeeks, 2023; Vaishnavi, 2025). Unlike traditional traceroute tools that rely on ICMP packets, Hping3 utilizes TCP SYN packets, which are less commonly blocked by firewalls. This makes TCP-based tracerouting more effective in network environments where ICMP traffic is restricted or filtered (Otw, 2023). The commands breakdown is as follows (Achipra, 2025; GeeksforGeeks, 2023; Vaishnavi, 2025):
 
 - **sudo:** to access root privileges
 - **--traceroute:** to trace the path taken by packets to reach their destination
@@ -144,7 +144,11 @@ The command used for tracerouting is `sudo hping3 --traceroute -V -S -p 80 -c 4 
 ### 3.3 Banner Grabbing
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/main/Task%201%20(Reconnaissance)/images-hping3/hping3-banner-grabbing.png)
 
-The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 5 <target ip address>`.
+Banner grabbing is an information-gathering technique that used in both offensive and defensive cybersecurity to identify services running on open ports of a target system. A banner is the text response provided by a server that reveals details such as the software name, version, and sometimes operating system information. By collecting this data, attackers and security professionals can determine potential vulnerabilities associated with specific software versions. Banner grabbing can be performed actively, where packets are sent directly to a target server to analyze its response, or passively, where information is captured indirectly without establishing a direct connection. This technique can be applied to various protocols, including HTTP (port 80), FTP (port 21), and SMTP (port 25). Since identifying service versions allows security analysts or attackers to search for known exploits, banner grabbing is considered a critical reconnaissance step in penetration testing and ethical hacking (GeeksforGeeks, 2025b). In this demonstartion, the command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 5 <target ip address>`, which probes the FTP service on port 21 to obtain banner information, allowing identification that can then be analyzed for potential vulnerabilities (Vaishnavi, 2025). The commands breakdown is as follows (Achipra, 2025; GeeksforGeeks, 2023; Vaishnavi, 2025):
+
+- **-S:** Sets the SYN flag bit to initiate a TCP connection attempt to determine port status based on the returned TCP flags
+- **-p 21:** Specifies port 21 to target the FTP service
+- **-c 5:** Sends four packets to improve scan reliability and reduce the impact of packet loss
 
 ## Comparison Discussion
 (insert description)
@@ -152,7 +156,7 @@ The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 5 <targe
 ## Conclusion
 (insert description)
 
-## References/Credits
+## References
 
 _403 Forbidden_. (2025, July 4). MDN. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403
 
@@ -166,7 +170,9 @@ _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Sca
 
 GeeksforGeeks. (2023, November 4). _hping3 Command in Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/hping3-command-in-linux/
 
-GeeksforGeeks. (2025, July 23). _Reconng Information gathering tool in Kali Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/recon-ng-installation-on-kali-linux/
+GeeksforGeeks. (2025a, July 23). _Reconng Information gathering tool in Kali Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/recon-ng-installation-on-kali-linux/
+
+GeeksforGeeks. (2025b, July 23). What is Banner Grabbing? GeeksforGeeks. https://www.geeksforgeeks.org/ethical-hacking/what-is-banner-grabbing/
 
 Lanmaster. (n.d.). _Getting started_. GitHub. https://github.com/lanmaster53/recon-ng/wiki/Getting-Started/226a2c2541c6bba6f15a77b227c0c4bed8c572aa
 
