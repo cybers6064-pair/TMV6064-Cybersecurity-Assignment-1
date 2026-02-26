@@ -80,7 +80,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Reason of command:** This writes a tiny PHP script that takes whatever text is placed in the `cmd` URL parameter and passes it directly to the underlying Linux operating system.  
 ### Step 2: Uploading & Executing  
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/ca1883cb34d75ff51d69dce03174ff970a4149e9/Task%202%20images/Webshell3.png)  
-
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/64a6daf995a64314c99426e7df3d04d6d7526eda/Task%202%20images/Webshell4.png)  
 **Action:** Upload php file in DVWA and accessed via web browser at `.../simple_shell.php?cmd=whoami`  
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
