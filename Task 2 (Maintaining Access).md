@@ -28,7 +28,7 @@ Such vulnerable web application was used in this task in order to perform the sa
 This section explains the step-by-step execution using Webshell, reproducing the tutorial and explanation provided by Wood (2022) and Swain (2025).  
   
 ### Step 1: Downloading the Source Code  
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/fe8a7345115b65b0d4d7e6cf8be538af21bf84f0/Task%202%20images/DVWA1.png)    
 **Command**: `cd /var/www/html`  
 `sudo git clone https://github.com/digininja/DVWA.git`  
 **Reason of command:** The `cd` command navigates into the Apache web server's default public directory. The `git clone` command reaches out to GitHub and downloads the entire repository of DVWA's raw PHP source code directly into that folder so the web server can host it.      
