@@ -41,7 +41,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Command:** `sudo service mariadb start`  
 **Reason of command:** Before the application can function, the backend database service must be running. This command boots up the MariaDB (MySQL) server so it is ready to accept connections.    
 ### Step 4: Provisioning the Database & User    
-**Command:** `sudo mysql -u root -p`  
+**Command:** `sudo mysql -u root -p`    
 **Reason of command:** This logs into the MariaDB command-line monitor as the administrative root user, allows building the backend infrastructure for DVWA.  
 **SQL Commands Executed:**  
 `create database dvwa;`  
@@ -50,7 +50,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 `flush privileges;`  
 The `create database` allocates a dedicated storage space just for this application. The `create user` creates a specific database user with the exact password that matches the `config.inc.php` file from Step 2. Meanwhile, `grant all` gives new user full administrative rights over the dvwa database, explicitly binding it to the `127.0.x.x` local IP to fix socket connection issues. The `flush privileges` forces the database to immediately reload its security tables, locking in our new user permissions.  
 ### Step 5: Finalizing Setup @ Web Interface
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/472bbb07cf33c0d668826913fa0a67be3d7751d3/Task%202%20images/DVWA7.png)  
 **Action:** Navigating to `http://127.0.x.x/DVWA/setup.php` in the web browser and reviewing the Setup Check.  
 **Reason for action:** While the MariaDB database was created in the terminal, it is currently empty. The DVWA setup page performs a system check to verify that all necessary backend components (like PHP modules) are running correctly. Once verified, clicking the "Create / Reset Database" button at the bottom of this page triggers the application to automatically build the necessary tables and populate them with default data, completing the installation process.  
 ### Step 6: Verififcation & Dashboard Access  
