@@ -114,8 +114,10 @@ This section explains the step-by-step execution using Weevely, reproducing the 
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c8b39c9be0f5eb4b23a7587e78bb0f62ec488bc2/Task%202%20images/Weevely4.png)  
 **Command:** `weevely <Target_URL/filename.php> <password>`  
 **Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.    
+
 **Command:** `system_info`  
 **Reason of command:** This command performs automated system reconnaissance. It instantly tells the attacker what operating system is running, the kernel version, and the current user privileges. This is the critical first step in planning a "Privilege Escalation" attack to become the root administrator.  
+
 **Command:** `file_ls`  
 **Reason of command:** This command allows the attacker to silently map out the target's file system. Instead of guessing where things are, the attacker uses this to browse the server's folders to locate sensitive information such as database configuration files with hardcoded passwords, without triggering security alarms. 
 
