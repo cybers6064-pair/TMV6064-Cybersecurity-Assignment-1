@@ -1,10 +1,8 @@
 # Task 2: Maintaining Access  
 By: Elisha Sendie
-## ⚠️ Disclaimer  
+## Disclaimer  
 **This project is for educational purposes only. All testing was performed in a
 controlled environment or on authorized targets.  
-
-![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/6afca6cef05dff4e9eed5e9f134a616248a5f921/Readme%20images/i-am-not-a-security-threat-security-threat.gif)
 
 ## Introduction  
 **Maintaining Access** phase or also known as **persistence** in the target system, involves hacker that installs software or make changes to the target machine in order to access the target over time. Hence, allowing the hacker to stay connected with the target machine which prevent the need to start the process from scratch for the same target (GeeksforGeeks, 2025).    
