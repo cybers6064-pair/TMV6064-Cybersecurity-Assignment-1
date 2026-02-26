@@ -33,7 +33,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 `sudo git clone https://github.com/digininja/DVWA.git`  
 **Reason of command:** The `cd` command navigates into the Apache web server's default public directory. The `git clone` command reaches out to GitHub and downloads the entire repository of DVWA's raw PHP source code directly into that folder so the web server can host it.      
 ### Step 2: Creating Configuration File  
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/3b2021000463436cd644599deb97bce99c07b3ba/Task%202%20images/DVWA2.png)  
 **Command:** `sudo cp config/config.inc.php.dist config/config.inc.php`  
 **Reason of command:** DVWA does not come with a ready-to-use configuration file to prevent accidental deployment errors (Wood, 2022; Swain, 2025). Alternatively, it provides a template file ending in `.dist` (distribution). The `cp` (copy) command clones this template into an active PHP file that the application will actually read to find its database credentials.  
 ### Step 3: Starting Database Service    
