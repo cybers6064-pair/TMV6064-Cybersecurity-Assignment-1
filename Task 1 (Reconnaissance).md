@@ -109,12 +109,15 @@ The command `modules load <module name>` is for loading the installed module. Fo
 The command `options set SOURCE <domain name or value>` is used to define the source after loading the module. By default, the **SOURCE** option is set to 'default', which applies to all domains stored in the user’s workspace domain table. Each module may contain different configuration options and corresponding values depending on its function. Once the required options are configured, the `run` command is executed to initiate the module (Marc, 2025) (for the demonstration, the 403 error indicates that the server understood the request but refused to process it (_403 Forbidden_, 2025). Therefore, the demonstration was halted to ensure safety as a third-party domain name was was used as the SOURCE following the tutorial). As a result, the system typically displays real-time progress updates followed by a summary of the results (Marc, 2025).
 
 ## 3. Hping3
+Hping3 is a powerful and sophisticated open-source packet crafting tool widely used by cybersecurity professionals, including penetration testers and network administrators. It is mainly utilized for security auditing, firewall testing, network scanning, and advanced reconnaissance, while also enabling users to perform highly detailed network analysis. Hping3 operates through a command-line interface on Unix-like systems. Although it appears similar to a simple ping tool, it actually provides full control over the TCP/IP protocol. Its three key features are Port Scanning, Firewall Testing, and Network Path Discovery (Tracerouting). The tool is commonly used in ethical hacking, penetration testing, and network diagnostics, making it highly important in the cybersecurity field. Unlike basic ping tools that rely only on ICMP, Hping3 allows users to send TCP, UDP, and RAW-IP packets with customizable flags and payloads. This capability enables in-depth analysis of target systems, firewall behavior, packet filtering mechanisms, and network path detection (Vaishnavi, 2025). The following demonstration further explores these features, reproducing the tutorial conducted by WebAsha Technologies (Vaishnavi, 2025).
 
-### 3.1
+### 3.1 Port Scanning
 
-### 3.2
 
-### 3.3
+### 3.2 Firewall Testing
+
+
+### 3.3 Network Path Discovery (Tracerouting)
 
 ## Comparison Discussion
 (insert description)
@@ -139,4 +142,4 @@ The command `options set SOURCE <domain name or value>` is used to define the so
 - _Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/recon-ng-tutorial/#:~:text=When%20using%20Recon%2Dng%20workspaces%20%2C,%5Brecon%2Dng%5D%5Bdefault%5D%20%3E%20workspaces%20create%20example_name
 
 **Hping3**
-1. ref-1
+- Vaishnavi. (2025, June 18). What is Hping3 Tool? Features, installation, commands & use cases explained. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
