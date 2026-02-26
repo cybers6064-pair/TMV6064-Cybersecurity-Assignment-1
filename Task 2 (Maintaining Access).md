@@ -26,7 +26,7 @@ Such vulnerable web application was used in this task in order to perform the sa
 ## Step-by-Step Execution  
 This section explains the step-by-step execution using Webshell, reproducing the tutorial and explanation provided by Wood (2022) and Swain (2025).  
   
-**Step 1: Downloading the Source Code**
+**Step 1: Downloading the Source Code**  
 (insert ss)  
 **Command**: `cd /var/www/html`  
 `sudo git clone https://github.com/digininja/DVWA.git`  
