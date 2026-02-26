@@ -149,23 +149,33 @@ The command used for Hping3 banner grabbing is `sudo hping3 -S -p 21 -c 5 <targe
 (insert description)
 
 ## References/Credits
-**NMAP**
-- _A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.org/book/port-scanning-tutorial.html
-- _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
-- _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
-- Nmap. (n.d.). https://nmap.org/
-- Obialom, B. (2023, November 29). _A guide to using NMAP on Kali Linux_. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
-- Sharadin, G. (n.d.). _What is Cybersecurity Reconnaissance | Types & Protection | Imperva_. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
-**Recon-ng**
-- _403 Forbidden_. (2025, July 4). MDN. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403
-- GeeksforGeeks. (2025, July 23). _Reconng Information gathering tool in Kali Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/recon-ng-installation-on-kali-linux/
-- Lanmaster. (n.d.). _Getting started_. GitHub. https://github.com/lanmaster53/recon-ng/wiki/Getting-Started/226a2c2541c6bba6f15a77b227c0c4bed8c572aa
-- Marc, D. (2025, July 17). Recon-ng: a powerful reconnaissance tool for hackers (Red Team, Pentesters). _Dark Marc | Cybersecurity, Hacking & Tech_. https://darkmarc.substack.com/p/recon-ng-a-powerful-reconnaissance
-- _Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/recon-ng-tutorial/#:~:text=When%20using%20Recon%2Dng%20workspaces%20%2C,%5Brecon%2Dng%5D%5Bdefault%5D%20%3E%20workspaces%20create%20example_name
+_403 Forbidden_. (2025, July 4). MDN. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403
 
-**Hping3**
-- Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
-- GeeksforGeeks. (2023, November 4). _hping3 Command in Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/hping3-command-in-linux/
-- Otw. (2023, December 10). _Port Scanning and Reconnaissance with Hping3_. https://hackers-arise.com/port-scanning-and-reconnaissance-with-hping3/
-- Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
+_A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.org/book/port-scanning-tutorial.html
+
+Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
+
+_Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
+
+_Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
+
+GeeksforGeeks. (2023, November 4). _hping3 Command in Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/hping3-command-in-linux/
+
+GeeksforGeeks. (2025, July 23). _Reconng Information gathering tool in Kali Linux_. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/recon-ng-installation-on-kali-linux/
+
+Lanmaster. (n.d.). _Getting started_. GitHub. https://github.com/lanmaster53/recon-ng/wiki/Getting-Started/226a2c2541c6bba6f15a77b227c0c4bed8c572aa
+
+Marc, D. (2025, July 17). Recon-ng: a powerful reconnaissance tool for hackers (Red Team, Pentesters). _Dark Marc | Cybersecurity, Hacking & Tech_. https://darkmarc.substack.com/p/recon-ng-a-powerful-reconnaissance
+
+Nmap. (n.d.). https://nmap.org/
+
+Obialom, B. (2023, November 29). _A guide to using NMAP on Kali Linux_. Medium. https://medium.com/@bukkyobialom/a-guide-to-using-nmap-on-kali-linux-c0e6894834a8
+
+Otw. (2023, December 10). _Port Scanning and Reconnaissance with Hping3_. https://hackers-arise.com/port-scanning-and-reconnaissance-with-hping3/
+
+_Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/recon-ng-tutorial/#:~:text=When%20using%20Recon%2Dng%20workspaces%20%2C,%5Brecon%2Dng%5D%5Bdefault%5D%20%3E%20workspaces%20create%20example_name
+
+Sharadin, G. (n.d.). _What is Cybersecurity Reconnaissance | Types & Protection | Imperva_. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
+
+Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
