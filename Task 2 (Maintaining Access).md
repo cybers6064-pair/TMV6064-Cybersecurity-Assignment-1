@@ -37,11 +37,10 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Command:** `sudo cp config/config.inc.php.dist config/config.inc.php`  
 **Reason of command:** DVWA does not come with a ready-to-use configuration file to prevent accidental deployment errors (Wood, 2022; Swain, 2025). Alternatively, it provides a template file ending in `.dist` (distribution). The `cp` (copy) command clones this template into an active PHP file that the application will actually read to find its database credentials.  
 ### Step 3: Starting Database Service    
-(insert ss)  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/2e9b14c851ac6a20d5ac9d68b9be6f35a0639ef4/Task%202%20images/DVWA6.png)  
 **Command:** `sudo service mariadb start`  
 **Reason of command:** Before the application can function, the backend database service must be running. This command boots up the MariaDB (MySQL) server so it is ready to accept connections.    
-### Step 4: Provisioning the Database & User  
-(insert ss)  
+### Step 4: Provisioning the Database & User    
 **Command:** `sudo mysql -u root -p`  
 **Reason of command:** This logs into the MariaDB command-line monitor as the administrative root user, allows building the backend infrastructure for DVWA.  
 **SQL Commands Executed:**  
