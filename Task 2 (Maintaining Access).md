@@ -104,7 +104,7 @@ This section explains the step-by-step execution using Weevely, reproducing the 
 **Command:** `weevely generate <password> <filename.php>`  
 **Reason of command:** This command crafts the obfuscated PHP backdoor file and locks it with a specific password so only the attacker can access the session.  
 ### Step 2: Uploading Payload  
-![image alt]  
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c85ba51b7d96139b8fddd73bcbf814370d47203d/Task%202%20images/Weevely2.png)    
 **Action:** Upload the generated PHP file in the *DVWA* file upload vulnerability.  
 **Reason of action:** To physically place the backdoor onto the target server's file system so the web server can execute it.  
 ### Step 3: Connecting to the Backdoor    
