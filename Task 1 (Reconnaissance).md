@@ -188,7 +188,7 @@ _A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.or
 
 Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
 
-Borges, E. (2024, April 1). What is DNS Enumeration? Top Tools and Techniques Explained. https://www.recordedfuture.com/threat-intelligence-101/tools-and-techniques/dns-enumeration
+Borges, E. (2024, April 1). _What is DNS Enumeration? Top Tools and Techniques Explained_. https://www.recordedfuture.com/threat-intelligence-101/tools-and-techniques/dns-enumeration
 _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
 
 _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
@@ -199,7 +199,7 @@ GeeksforGeeks. (2025a, July 23). _Reconng Information gathering tool in Kali Lin
 
 GeeksforGeeks. (2025b, July 23). What is Banner Grabbing? GeeksforGeeks. https://www.geeksforgeeks.org/ethical-hacking/what-is-banner-grabbing/
 
-Issa, A. (2024, February 29). A Beginner’s Guide to DNS Reconnaissance (Part 1). Medium. https://infosecwriteups.com/a-beginners-guide-to-dns-reconnaissance-part-1-6cd9f502db7d
+Issa, A. (2024, February 29). _A Beginner’s Guide to DNS Reconnaissance (Part 1)_. Medium. https://infosecwriteups.com/a-beginners-guide-to-dns-reconnaissance-part-1-6cd9f502db7d
 
 Lanmaster. (n.d.). _Getting started_. GitHub. https://github.com/lanmaster53/recon-ng/wiki/Getting-Started/226a2c2541c6bba6f15a77b227c0c4bed8c572aa
 
@@ -217,6 +217,6 @@ _Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/r
 
 Sharadin, G. (n.d.). _What is Cybersecurity Reconnaissance | Types & Protection | Imperva_. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
-TechMindXperts. (2023, April 16). What is dnsrecon Full Guide. Medium. https://medium.com/@techmindxperts/what-is-dnsrecon-full-guide-with-examples-355aba308332
+TechMindXperts. (2023, April 16). _What is dnsrecon Full Guide_. Medium. https://medium.com/@techmindxperts/what-is-dnsrecon-full-guide-with-examples-355aba308332
 
 Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
