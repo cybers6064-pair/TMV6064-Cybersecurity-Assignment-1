@@ -158,17 +158,21 @@ DNS reconnaissance is an important step in gathering network information and sof
 ### 4.1 Enumeration of Subdomains
 DNS enumeration is essential during the reconnaissance stage of penetration testing as it provides detailed information about a target's network infrastructure (Issa, 2024). It involves discovering DNS records, subdomains, IP addresses, and related configurations, which can aid in network mapping, detecting potential vulnerabilities, and plan prospective attack paths (Issa, 2024). Since manual DNS enumeration can be time-consuming and prone to errors, automated tools like DNSRecon are commonly used to increase efficiency (Issa, 2024). DNS enumeration provides valuable information for ethical hackers to better understand the target ecosystem and identify potential vulnerabilities (Issa, 2024).
 
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5793f4cbf3f207f6e9a791a1c7265934b8267be9/Task%201%20(Reconnaissance)/images-dnsrecon/enumeration%20subdomain%201.png)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5793f4cbf3f207f6e9a791a1c7265934b8267be9/Task%201%20(Reconnaissance)/images-dnsrecon/enumeration%20subdomain%202.png)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5793f4cbf3f207f6e9a791a1c7265934b8267be9/Task%201%20(Reconnaissance)/images-dnsrecon/enumeration%20subdomain%203.png)
 
 ### 4.2 Retrieval of DNS Records
 DNSRecon can also be used to retrieve DNS records for a target domain, such as MX, NS, SOA, TXT, and other related record types. Below is the example and command used for DNS records retrieval (TechMindXperts, 2023).
 
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/9ce13e51bb22b7cfc1305c586300a723ee6cc0b0/Task%201%20(Reconnaissance)/images-dnsrecon/retrieve%20dns%20record%201.png)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c2c25c22e9d6d4656b4f051835c277ce6b015680/Task%201%20(Reconnaissance)/images-dnsrecon/retrieve%20dns%20record%202.png)
 
 ### 4.3 Reverse DNS Lookups
 Reverse DNS (rDNS) lookup involves resolving an IP address back to its domain name using Pointer records (PTR) (Borges, 2024). These records are stored in specified locations, such as _in-addr.arpa_ for IPv4 and _ip6.arpa_ for IPv6 (Borges, 2024). Reverse DNS lookup helps to identify domain names associated with certain IP addresses that makes it useful for defining a target's infrastructure and disclosing hostnames that would be difficult to uncover using standard enumeration methods (Borges, 2024). It can also provide insights into internal naming schemes and server roles as well as the discovery of potential virtual hosts and security issues (Borges, 2024). Additionally, this is where tools like DNSRecon become helpful as it can automate this reverse DNS lookups across IP ranges (Borges, 2024).
 
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c2c25c22e9d6d4656b4f051835c277ce6b015680/Task%201%20(Reconnaissance)/images-dnsrecon/reverse%20lookup%201.png)
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/a3c3308ad2b0e335bf52fc74e67fe4e7b9a8aafa/Task%201%20(Reconnaissance)/images-dnsrecon/reverse%20lookup%202.png)
 
 ## Comparison Discussion (Update too)
 Although all three tools support reconnaissance activities, they differ in scope and functionality. NMAP efficiently performs host discovery, port scanning, and service version detection that provides a clear view of the target’s network and potential entry points. Contrastingly, Recon-ng collects publicly available information such as domains, subdomains, and WHOIS data, organizing the collected intelligence within structured workspaces, where this structured approach helps building a comprehensive profile of the target environment. On the other hand, Hping3 enables precise packet-level analysis that allows users to craft and send customized TCP/IP packets for tasks such as port scanning, tracerouting, and banner grabbing, offering more control over packet behavior. Despite these differences, the tools share the common goal of supporting reconnaissance and complement one another rather than compete. Recon-ng can gather background intelligence, NMAP can identify accessible hosts and services, and Hping3 can further analyze system responses through crafted packets, offering a more systematic and layered reconnaissance process through these combinations.
