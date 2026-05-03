@@ -17,7 +17,7 @@ For this particular task (Maintaining Access), a web back door and tunnelling te
 
 **Target Environment:** *Kali Linux* (Attacker) and Vulnerable Target Application (*Damn Vulnerable Web Application, DVWA*)  
 
-**Tools:** *Webshells, Weevely, Cryptcat*
+**Tools:** *Webshells, Weevely, Cryptcat, Powersploit, and Dns2tcp*
 
 ## Target Environment Setup: Installing DVWA  
 The *Damn Vulnerable Web Application (DVWA)* is a PHP/MariaDB web application that is vulnerable. It was developed as an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to help both students & teachers to learn about web application security in a controlled class room environment (Wood, 2022).
