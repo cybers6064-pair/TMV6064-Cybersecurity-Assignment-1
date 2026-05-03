@@ -87,7 +87,7 @@ This section explains the step-by-step execution using Webshell, reproducing the
 **Reason of action:** Navigating to this specific URL triggers the Apache web server to run the PHP script, execute the system command (`whoami`), and print the result straight to the webpage.  
 
 ## 2. Weevely  
-"**Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"― *Kali Linux (2025)*  
+"**Weevely** is a stealth PHP web shell that simulate telnet-like connection. It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones"― *Kali Linux (2025a)*  
 
 ## 2.1 Key Features  
 The three key features of Weevely are as follows (Gemini, 2026):
@@ -153,7 +153,7 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 PowerSploit is an open-source, PowerShell based post-exploitation framework designed to assist security professionals in assessing the security of Windows environments (Powersploit, n.d.). Moreover, it is mainly used during authorized penetration testing and red team engagements to identify vulnerabilities and strengthen defensive security measures (Powersploit, n.d.).
 
 ## 4.1 Key Features
-The three key features of PowerSploit are as follows (Gemini, 2026) :
+The three key features of PowerSploit are as follows (Gemini, 2026):
 ### 4.1.1 Dynamic Privilege Adaptation
 Automatically adjusts its deployment method such as modifying system-level scheduled tasks versus local user registry keys based on whether the attacker currently holds administrative or standard user privileges.
 ### 4.1.2 Permanent WMI Subscriptions
@@ -162,30 +162,56 @@ Leverages Windows Management Instrumentation (`-PermanentWMI`) to silently trigg
 Encapsulates and compresses existing malicious scripts through the `Add-Persistence` function so it can be executed directly in memory without dropping easily detectable executable files onto the target's hard drive.
 
 ### 4.2 Step-by-Step Execution
-This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Powersploit (n.d.).
+This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Powersploit (n.d.) as well as Gemini (2026).
 
 ### Step 1: Downloading the Framework
 ![image alt]()
-Command: `git clone https://github.com/PowerShellMafia/PowerSploit.git`
-Reason of command: To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
+**Command:** `git clone https://github.com/PowerShellMafia/PowerSploit.git`
+**Reason of command:** To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
 ### Step 2: Installing to the System Path
 ![image alt]()
-Command: `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`
-Reason of command: Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
+**Command:** `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`
+**Reason of command:** Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
 ### Step 3: Source Code Analysis of Persistence Modules
 ![image alt]()
-Command: `cd Persistence` followed by `cat Persistence.psm1`
-Reason of command: To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment (by examining the source code).
+**Command:** `cd Persistence` followed by `cat Persistence.psm1`
+**Reason of command:** To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment.
+
+## 5. dns2tcp
+dns2tcp is a network tool designed to tunnel TCP connections through DNS traffic, allowing users to bypass firewalls or network restrictions by encapsulating data in DNS queries (TXT records). It consists of a server (dns2tcpd) and client (dns2tcpc), often used for SSH over DNS, that does not require root privileges (Gemini, 2026; Kali Linux, 2025b).
+
+## 5.1 Key Features
+The three key features of PowerSploit are as follows (Gemini, 2026):
+### 5.1.1 DNS Encapsulation for Firewall Evasion
+Wraps standard TCP network traffic inside standard DNS TXT records to silently bypass strict outbound firewall rules, exploiting the fact that port 53 is almost universally permitted on enterprise networks.
+### 5.1.2 Multiplexed Resource Mapping
+Allows an attacker to define and natively route multiple distinct TCP services—such as SSH, SMTP, or custom backdoors—simultaneously through a single established DNS tunnel.
+### 5.1.3 Lightweight Daemon Architecture
+Operates using a highly portable, self-contained client and server executable, entirely removing the need for an attacker to install and configure a full, complex DNS server on the compromised target machine.
+
+
+### 5.2 Step-by-Step Execution
+This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Kali Linux (2025b) as well as Gemini (2026).
+
+![image alt]()
+### Step 1: Staging the Server-Side Payload (Target Machine)
+**Action:** Creating the hidden configuration file (`.dns2tcpdrc`) that the daemon will use to establish the tunnel.
+**Command:** `nano .dns2tcpdrc` followed by `cat .dns2tcpdrc` to verify the contents.
+**Reason of command:** Before initiating a DNS tunnel, an attacker must drop a configuration file on the compromised machine. This file instructs the `dns2tcpd` service to listen on port 53, defines the malicious domain (`dns2tcp.kali.org`), sets the encryption key, and maps the internal SSH service (`127.0.0.1:22`) so it can be accessed remotely.
+### Step 2: Safe Static Analysis vs. Dynamic Execution
+**Description:** In a live attack, the adversary would execute `dns2tcpd -f` `.dns2tcpdrc` to open the port. However, due to strict lab safety protocols regarding outbound network tunneling, this phase is documented up to the staging process. The configuration file successfully demonstrates how the attacker dictates the routing of the encapsulated SSH traffic.
 
 ## Comparative Discussion  
-Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
-  
-  The simple *Webshell* and *Weevely* both function at the Application Layer as web backdoors, meaning their persistence relies entirely on the target's Apache web server remaining active. Even so, they differ in complexity. The *Webshell* offers extreme stealth through a minimalist, stateless design that blends into normal HTTP traffic, whereas *Weevely* provides a comprehensive, encrypted framework packed with automated enumeration modules.  
+Based on our experience using these tools, all of them successfully manage to maintain post-exploitation access. However, they operate at different levels of the system and network architecture, serving distinct strategic purposes for an attacker.
 
-  On the other hand, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. Consequently, this ensures that if the web application is taken offline or patched by administrators, a secure, independent lifeline to the underlying operating system remains intact.  
+ The simple *Webshell* and *Weevely* both function at the Application Layer as web backdoors, meaning their persistence relies entirely on the target's web server remaining active. Even so, they differ in complexity. The *Webshell* offers extreme stealth through a minimalist, stateless design that blends into normal HTTP traffic, whereas *Weevely* provides a comprehensive, encrypted framework packed with automated enumeration modules.
+
+ When web access is insufficient, *Cryptcat* operates at the Transport Layer to establish a standalone network tunnel. *Cryptcat* removes the dependency on the web server entirely by using a named pipe to route the shell through Twofish encryption. However, standard outbound ports used by *Cryptcat* may be caught by strict egress firewalls. This is where *dns2tcp* becomes important. While it also provides an independent tunnel, *dns2tcp* encapsulates its traffic within DNS queries (Application Layer). It provides a highly specialized method for evading strict network perimeter controls because almost all enterprise firewalls allow outbound DNS traffic (port 53).
+
+ Finally, while the previous tools focus on network-level connections, *PowerSploit* targets the underlying Operating System (OS) itself. Rather than establishing a continuous listener, *PowerSploit*'s persistence modules embed execution triggers directly into the OS fabric—such as modifying Registry keys or creating Permanent WMI Subscriptions. This ensures that even if the machine is completely disconnected from the network or rebooted, the attacker's access mechanisms will automatically regenerate the moment the system comes back online.  
 
 ## Conclusion
-In conclusion, this maintaining access task has managed to demonstrate the critical post-exploitation concept from an offensive persepective. An attacker ensures highly resilient access to a compromised system by developing multiple persistence mechanisms across different network layers, ranging from Application Layer web backdoors like Weevely and a simple PHP shell, to a Transport Layer encrypted tunnel using Cryptcat. This approach guarantees that even if a network administrator discovers and remediates one vulnerability, such as taking the Apache web server offline to neutralize the webshells, the underlying operating system remains fully accessible through an independent, encrypted network connection. Moreover, demonstrating these varied persistence techniques shows why real-world defenders must implement robust, multi-layered security measures to fully secure an environment. 
+In conclusion, this maintaining access task has successfully demonstrated the critical post-exploitation phase from an offensive perspective. An advanced attacker ensures highly resilient access to a compromised system by developing multiple, overlapping persistence mechanisms. This ranges from Application Layer web backdoors (Weevely and the simple PHP shell), to standalone encrypted tunnels (Cryptcat), protocol-smuggling mechanisms for firewall evasion (dns2tcp), and deep OS-level integration (PowerSploit). This layered approach guarantees that even if a network administrator discovers and remediates one vulnerability such as taking the web server offline or blocking an unrecognized TCP port, the underlying operating system remains fully accessible through secondary triggers or stealthy DNS tunnels. Ultimately, demonstrating these varied and complex persistence techniques highlights why real-world users must implement robust, defense-in-depth security measures that encompasses strict egress filtering, endpoint behavioral monitoring, and regular web application patching to fully secure an enterprise environment. 
 
 ## References
 Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
@@ -196,7 +222,9 @@ GeeksforGeeks. (2025, July 23). *Maintaining access tools in Kali Linux*. https:
 
 Heath, M. (2023, July 6). *Web Shells: Understanding attacker's tools and techniques*. F5 Labs. https://www.f5.com/labs/articles/web-shells-understanding-attackers-tools-and-techniques  
 
-Kali Linux. (2025, December 9). *Weevely*. https://www.kali.org/tools/weevely/
+Kali Linux. (2025a, December 9). *Weevely*. https://www.kali.org/tools/weevely/
+
+Kali Linux. (2025b, December 9). *Dns2tcp*. https://www.kali.org/tools/dns2tcp/#tool-documentation
 
 Powersploit. (n.d.). *What is Powersploit?*. https://powersploit.com/#Installation
 
