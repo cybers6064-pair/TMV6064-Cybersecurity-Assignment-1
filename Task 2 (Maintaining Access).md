@@ -181,7 +181,7 @@ This section explains the step-by-step execution using PowerSploit, reproducing 
 dns2tcp is a network tool designed to tunnel TCP connections through DNS traffic, allowing users to bypass firewalls or network restrictions by encapsulating data in DNS queries (TXT records). It consists of a server (dns2tcpd) and client (dns2tcpc), often used for SSH over DNS, that does not require root privileges (Gemini, 2026; Kali Linux, 2025b).
 
 ## 5.1 Key Features
-The three key features of PowerSploit are as follows (Gemini, 2026):
+The three key features of dns2tcp are as follows (Gemini, 2026):
 ### 5.1.1 DNS Encapsulation for Firewall Evasion
 Wraps standard TCP network traffic inside standard DNS TXT records to silently bypass strict outbound firewall rules, exploiting the fact that port 53 is almost universally permitted on enterprise networks.
 ### 5.1.2 Multiplexed Resource Mapping
