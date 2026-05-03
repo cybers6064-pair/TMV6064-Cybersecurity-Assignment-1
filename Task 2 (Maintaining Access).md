@@ -173,7 +173,7 @@ This section explains the step-by-step execution using PowerSploit, reproducing 
 **Reason of command:** Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
 ### Step 3: Source Code Analysis of Persistence Modules
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/2b0c2245653e637ae90f303c0e991dbc74ef4d4e/Task%202%20images/PowerSploit2.png)
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/9ce13e51bb22b7cfc1305c586300a723ee6cc0b0/Task%202%20images/PowerSploit3.png)
 **Command:** `cd Persistence` followed by `cat Persistence.psm1`
 **Reason of command:** To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment.
 
