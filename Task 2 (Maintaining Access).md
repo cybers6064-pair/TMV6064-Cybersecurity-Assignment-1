@@ -11,7 +11,7 @@ controlled environment or on authorized targets.
 - Tunnelling and exfiltration
 - Web back doors
 
-For this particular task (Maintaining Access), a web back door and tunnelling techniques was explored and configured using five distinct tools.
+For this particular task (Maintaining Access), web back door, tunnelling techniques, and OS back door were explored and configured using five distinct tools.
  
 **Objective:** To demonstrate post-exploitation techniques for maintaining access on a compromised target server using five distinct tools.  
 
