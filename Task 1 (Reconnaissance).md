@@ -151,6 +151,16 @@ Banner grabbing is an information-gathering technique that used in both offensiv
 - **-p 21:** Specifies port 21 to target the FTP service
 - **-c 5:** Sends four packets to improve scan reliability and reduce the impact of packet loss
 
+##4. DNSRecon
+### 4.1 
+
+
+### 4.2 
+
+
+### 4.3 
+
+
 ## Comparison Discussion
 Although all three tools support reconnaissance activities, they differ in scope and functionality. NMAP efficiently performs host discovery, port scanning, and service version detection that provides a clear view of the target’s network and potential entry points. Contrastingly, Recon-ng collects publicly available information such as domains, subdomains, and WHOIS data, organizing the collected intelligence within structured workspaces, where this structured approach helps building a comprehensive profile of the target environment. On the other hand, Hping3 enables precise packet-level analysis that allows users to craft and send customized TCP/IP packets for tasks such as port scanning, tracerouting, and banner grabbing, offering more control over packet behavior. Despite these differences, the tools share the common goal of supporting reconnaissance and complement one another rather than compete. Recon-ng can gather background intelligence, NMAP can identify accessible hosts and services, and Hping3 can further analyze system responses through crafted packets, offering a more systematic and layered reconnaissance process through these combinations.
 
