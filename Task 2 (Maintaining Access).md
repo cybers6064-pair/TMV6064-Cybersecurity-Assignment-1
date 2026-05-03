@@ -165,7 +165,7 @@ Encapsulates and compresses existing malicious scripts through the `Add-Persiste
 This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Powersploit (n.d.) as well as Gemini (2026).
 
 ### Step 1: Downloading the Framework
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5793f4cbf3f207f6e9a791a1c7265934b8267be9/Task%202%20images/PowerSploit1.png)
 **Command:** `git clone https://github.com/PowerShellMafia/PowerSploit.git`
 **Reason of command:** To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
 ### Step 2: Installing to the System Path
