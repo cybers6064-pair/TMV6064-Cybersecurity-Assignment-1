@@ -166,15 +166,15 @@ This section explains the step-by-step execution using PowerSploit, reproducing 
 
 ### Step 1: Downloading the Framework
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/5793f4cbf3f207f6e9a791a1c7265934b8267be9/Task%202%20images/PowerSploit1.png)
-**Command:** `git clone https://github.com/PowerShellMafia/PowerSploit.git`
+**Command:** `git clone https://github.com/PowerShellMafia/PowerSploit.git`  
 **Reason of command:** To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
 ### Step 2: Installing to the System Path
-**Command:** `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`
+**Command:** `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`  
 **Reason of command:** Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
 ### Step 3: Source Code Analysis of Persistence Modules
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/2b0c2245653e637ae90f303c0e991dbc74ef4d4e/Task%202%20images/PowerSploit2.png)
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/9ce13e51bb22b7cfc1305c586300a723ee6cc0b0/Task%202%20images/PowerSploit3.png)
-**Command:** `cd Persistence` followed by `cat Persistence.psm1`
+**Command:** `cd Persistence` followed by `cat Persistence.psm1`  
 **Reason of command:** To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment.
 
 ## 5. dns2tcp
@@ -195,11 +195,11 @@ This section explains the step-by-step execution using PowerSploit, reproducing 
 
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c2c25c22e9d6d4656b4f051835c277ce6b015680/Task%202%20images/dns2tcp.png)
 ### Step 1: Staging the Server-Side Payload (Target Machine)
-**Action:** Creating the hidden configuration file (`.dns2tcpdrc`) that the daemon will use to establish the tunnel.
-**Command:** `nano .dns2tcpdrc` followed by `cat .dns2tcpdrc` to verify the contents.
-**Reason of command:** Before initiating a DNS tunnel, an attacker must drop a configuration file on the compromised machine. This file instructs the `dns2tcpd` service to listen on port 53, defines the malicious domain (`dns2tcp.kali.org`), sets the encryption key, and maps the internal SSH service (`127.0.0.1:22`) so it can be accessed remotely.
+**Action:** Creating the hidden configuration file (`.dns2tcpdrc`) that the daemon will use to establish the tunnel.  
+**Command:** `nano .dns2tcpdrc` followed by `cat .dns2tcpdrc` to verify the contents.  
+**Reason of command:** Before initiating a DNS tunnel, an attacker must drop a configuration file on the compromised machine. This file instructs the `dns2tcpd` service to listen on port 53, defines the malicious domain (`dns2tcp.kali.org`), sets the encryption key, and maps the internal SSH service (`127.0.0.1:22`) so it can be accessed remotely.  
 ### Step 2: Safe Static Analysis vs. Dynamic Execution
-**Description:** In a live attack, the adversary would execute `dns2tcpd -f` `.dns2tcpdrc` to open the port. However, due to strict lab safety protocols regarding outbound network tunneling, this phase is documented up to the staging process. The configuration file successfully demonstrates how the attacker dictates the routing of the encapsulated SSH traffic.
+**Description:** In a live attack, the adversary would execute `dns2tcpd -f` `.dns2tcpdrc` to open the port. However, due to strict lab safety protocols regarding outbound network tunneling, this phase is documented up to the staging process. The configuration file successfully demonstrates how the attacker dictates the routing of the encapsulated SSH traffic.  
 
 ## Comparative Discussion  
 Based on our experience using these tools, all of them successfully manage to maintain post-exploitation access. However, they operate at different levels of the system and network architecture, serving distinct strategic purposes for an attacker.
@@ -211,7 +211,7 @@ Based on our experience using these tools, all of them successfully manage to ma
  Finally, while the previous tools focus on network-level connections, *PowerSploit* targets the underlying Operating System (OS) itself. Rather than establishing a continuous listener, *PowerSploit*'s persistence modules embed execution triggers directly into the OS fabric—such as modifying Registry keys or creating Permanent WMI Subscriptions. This ensures that even if the machine is completely disconnected from the network or rebooted, the attacker's access mechanisms will automatically regenerate the moment the system comes back online.  
 
 ## Conclusion
-In conclusion, this maintaining access task has successfully demonstrated the critical post-exploitation phase from an offensive perspective. An advanced attacker ensures highly resilient access to a compromised system by developing multiple, overlapping persistence mechanisms. This ranges from Application Layer web backdoors (Weevely and the simple PHP shell), to standalone encrypted tunnels (Cryptcat), protocol-smuggling mechanisms for firewall evasion (dns2tcp), and deep OS-level integration (PowerSploit). This layered approach guarantees that even if a network administrator discovers and remediates one vulnerability such as taking the web server offline or blocking an unrecognized TCP port, the underlying operating system remains fully accessible through secondary triggers or stealthy DNS tunnels. Ultimately, demonstrating these varied and complex persistence techniques highlights why real-world users must implement robust, defense-in-depth security measures that encompasses strict egress filtering, endpoint behavioral monitoring, and regular web application patching to fully secure an enterprise environment. 
+In conclusion, this maintaining access task has successfully demonstrated the critical post-exploitation phase from an offensive perspective. An advanced attacker ensures highly resilient access to a compromised system by developing multiple, overlapping persistence mechanisms. This ranges from Application Layer web backdoors (*Weevely* and the simple PHP shell), to standalone encrypted tunnels (*Cryptcat*), protocol-smuggling mechanisms for firewall evasion (*dns2tcp*), and deep OS-level integration (*PowerSploit*). This layered approach guarantees that even if a network administrator discovers and remediates one vulnerability such as taking the web server offline or blocking an unrecognized TCP port, the underlying operating system remains fully accessible through secondary triggers or stealthy DNS tunnels. Ultimately, demonstrating these varied and complex persistence techniques highlights why real-world users must implement robust, defense-in-depth security measures that encompasses strict egress filtering, endpoint behavioral monitoring, and regular web application patching to fully secure an enterprise environment. 
 
 ## References
 Chandel, R. (2020, April 2). *Comprehensive guide on CryptCat*. Hacking Articles. https://www.hackingarticles.in/comprehensive-guide-on-cryptcat/  
