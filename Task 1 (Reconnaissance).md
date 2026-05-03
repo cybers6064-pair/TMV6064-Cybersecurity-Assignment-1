@@ -152,20 +152,20 @@ Banner grabbing is an information-gathering technique that used in both offensiv
 - **-p 21:** Specifies port 21 to target the FTP service
 - **-c 5:** Sends four packets to improve scan reliability and reduce the impact of packet loss
 
-## 4. DNSRecon (Issa, 2024) + (TechMindXperts, 2023)
+## 4. DNSRecon
 DNS reconnaissance is an important step in gathering network information and software like DNSRecon are widely used to support this process (TechMindXperts, 2023). DNSRecon is a command-line tool designed for security professionals to gather important domain-related data such as subdomains, IP addresses, and various types of DNS records (TechMindXperts, 2023). It can execute several tasks, such as subdomain enumeration, DNS record retrieval, brute-forcing hidden subdomains, zone transfers, and reverse DNS lookups, all of which help detect potential vulnerabilities in a target network (TechMindXperts, 2023). DNSRecon is written in Python, works across multiple operating systems (Linux, Windows, MacOS), and comes preinstalled in Kali Linux (TechMindXperts, 2023). For this assignment, three key features of DNSRecon are discussed, which are enumeration of subdomains, retrieval of DNS records, and Reverse DNS lookups. The steps conducted for all key features are following the tutorial produced by TechMindXperts (2023).
 
-### 4.1 Enumeration of Subdomains (Issa, 2024) + (TechMindXperts, 2023)
+### 4.1 Enumeration of Subdomains
 DNS enumeration is essential during the reconnaissance stage of penetration testing as it provides detailed information about a target's network infrastructure (Issa, 2024). It involves discovering DNS records, subdomains, IP addresses, and related configurations, which can aid in network mapping, detecting potential vulnerabilities, and plan prospective attack paths (Issa, 2024). Since manual DNS enumeration can be time-consuming and prone to errors, automated tools like DNSRecon are commonly used to increase efficiency (Issa, 2024). DNS enumeration provides valuable information for ethical hackers to better understand the target ecosystem and identify potential vulnerabilities (Issa, 2024).
 
 ![image alt]()
 
-### 4.2 Retrieval of DNS Records (TechMindXperts, 2023)
+### 4.2 Retrieval of DNS Records
 DNSRecon can also be used to retrieve DNS records for a target domain, such as MX, NS, SOA, TXT, and other related record types. Below is the example and command used for DNS records retrieval (TechMindXperts, 2023).
 
 ![image alt]()
 
-### 4.3 Reverse DNS Lookups (Borges, 2024) + (TechMindXperts, 2023)
+### 4.3 Reverse DNS Lookups
 Reverse DNS (rDNS) lookup involves resolving an IP address back to its domain name using Pointer records (PTR) (Borges, 2024). These records are stored in specified locations, such as _in-addr.arpa_ for IPv4 and _ip6.arpa_ for IPv6 (Borges, 2024). Reverse DNS lookup helps to identify domain names associated with certain IP addresses that makes it useful for defining a target's infrastructure and disclosing hostnames that would be difficult to uncover using standard enumeration methods (Borges, 2024). It can also provide insights into internal naming schemes and server roles as well as the discovery of potential virtual hosts and security issues (Borges, 2024). Additionally, this is where tools like DNSRecon become helpful as it can automate this reverse DNS lookups across IP ranges (Borges, 2024).
 
 ![image alt]()
@@ -184,7 +184,7 @@ _A quick port scanning tutorial._ (n.d.). NMAP Network Scanning. https://nmap.or
 
 Achipra, S. (2025, September 3). _Introduction to Hping3_. Tutorials. https://www.zframez.com/articles/testing-tools/introduction-to-hping3
 
-**(DNSRecon)** Borges, E. (2024, April 1). What is DNS Enumeration? Top Tools and Techniques Explained. https://www.recordedfuture.com/threat-intelligence-101/tools-and-techniques/dns-enumeration
+Borges, E. (2024, April 1). What is DNS Enumeration? Top Tools and Techniques Explained. https://www.recordedfuture.com/threat-intelligence-101/tools-and-techniques/dns-enumeration
 _Chapter 3. Host Discovery._ (n.d.). NMAP Network Scanning. https://nmap.org/book/host-discovery.html
 
 _Chapter 7. Service and Application Version Detection._ (n.d.). NMAP Network Scanning. https://nmap.org/book/vscan.html
@@ -195,7 +195,7 @@ GeeksforGeeks. (2025a, July 23). _Reconng Information gathering tool in Kali Lin
 
 GeeksforGeeks. (2025b, July 23). What is Banner Grabbing? GeeksforGeeks. https://www.geeksforgeeks.org/ethical-hacking/what-is-banner-grabbing/
 
-**(DNSRecon)** Issa, A. (2024, February 29). A Beginner’s Guide to DNS Reconnaissance (Part 1). Medium. https://infosecwriteups.com/a-beginners-guide-to-dns-reconnaissance-part-1-6cd9f502db7d
+Issa, A. (2024, February 29). A Beginner’s Guide to DNS Reconnaissance (Part 1). Medium. https://infosecwriteups.com/a-beginners-guide-to-dns-reconnaissance-part-1-6cd9f502db7d
 
 Lanmaster. (n.d.). _Getting started_. GitHub. https://github.com/lanmaster53/recon-ng/wiki/Getting-Started/226a2c2541c6bba6f15a77b227c0c4bed8c572aa
 
@@ -211,6 +211,6 @@ _Recon-NG Tutorial_. (2022, November). Hacker Target. https://hackertarget.com/r
 
 Sharadin, G. (n.d.). _What is Cybersecurity Reconnaissance | Types & Protection | Imperva_. Learning Center. https://www.imperva.com/learn/data-security/cybersecurity-reconnaissance/
 
-**(DNSRecon)** TechMindXperts. (2023, April 16). What is dnsrecon Full Guide. Medium. https://medium.com/@techmindxperts/what-is-dnsrecon-full-guide-with-examples-355aba308332
+TechMindXperts. (2023, April 16). What is dnsrecon Full Guide. Medium. https://medium.com/@techmindxperts/what-is-dnsrecon-full-guide-with-examples-355aba308332
 
 Vaishnavi. (2025, June 18). _What is Hping3 Tool? Features, installation, commands & use cases explained_. WebAsha Technologies. https://www.webasha.com/blog/what-is-hping3-tool-features-installation-commands-use-cases-explained
