@@ -191,7 +191,7 @@ Operates using a highly portable, self-contained client and server executable, e
 
 
 ## 5.2 Step-by-Step Execution
-This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Kali Linux (2025b) as well as Gemini (2026).
+This section explains the step-by-step execution using dns2tcp, reproducing the tutorial and explanation provided by Kali Linux (2025b) as well as Gemini (2026).
 
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/c2c25c22e9d6d4656b4f051835c277ce6b015680/Task%202%20images/dns2tcp.png)
 ### Step 1: Staging the Server-Side Payload (Target Machine)
