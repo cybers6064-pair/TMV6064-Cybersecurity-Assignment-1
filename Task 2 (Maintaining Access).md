@@ -169,11 +169,10 @@ This section explains the step-by-step execution using PowerSploit, reproducing 
 **Command:** `git clone https://github.com/PowerShellMafia/PowerSploit.git`
 **Reason of command:** To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
 ### Step 2: Installing to the System Path
-![image alt]()
 **Command:** `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`
 **Reason of command:** Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
 ### Step 3: Source Code Analysis of Persistence Modules
-![image alt]()
+![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/2b0c2245653e637ae90f303c0e991dbc74ef4d4e/Task%202%20images/PowerSploit2.png)
 **Command:** `cd Persistence` followed by `cat Persistence.psm1`
 **Reason of command:** To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment.
 
