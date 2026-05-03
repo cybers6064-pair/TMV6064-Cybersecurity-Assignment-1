@@ -185,7 +185,7 @@ The three key features of PowerSploit are as follows (Gemini, 2026):
 ### 5.1.1 DNS Encapsulation for Firewall Evasion
 Wraps standard TCP network traffic inside standard DNS TXT records to silently bypass strict outbound firewall rules, exploiting the fact that port 53 is almost universally permitted on enterprise networks.
 ### 5.1.2 Multiplexed Resource Mapping
-Allows an attacker to define and natively route multiple distinct TCP services—such as SSH, SMTP, or custom backdoors—simultaneously through a single established DNS tunnel.
+Allows an attacker to define and natively route multiple distinct TCP services such as SSH, SMTP, or custom backdoors simultaneously through a single established DNS tunnel.
 ### 5.1.3 Lightweight Daemon Architecture
 Operates using a highly portable, self-contained client and server executable, entirely removing the need for an attacker to install and configure a full, complex DNS server on the compromised target machine.
 
