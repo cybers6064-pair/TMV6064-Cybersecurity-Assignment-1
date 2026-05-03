@@ -149,11 +149,33 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 **Action:** Executing commands such as `id` and `ls` on the listener terminal.  
 **Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.
 
-## 4. Powersploit
+## 4. PowerSploit
 PowerSploit is an open-source, PowerShell based post-exploitation framework designed to assist security professionals in assessing the security of Windows environments (Powersploit, n.d.). Moreover, it is mainly used during authorized penetration testing and red team engagements to identify vulnerabilities and strengthen defensive security measures (Powersploit, n.d.).
 
 ## 4.1 Key Features
-The three key features of Powersploit are as follows :
+The three key features of PowerSploit are as follows (Gemini, 2026) :
+### 4.1.1 Dynamic Privilege Adaptation
+Automatically adjusts its deployment method such as modifying system-level scheduled tasks versus local user registry keys based on whether the attacker currently holds administrative or standard user privileges.
+### 4.1.2 Permanent WMI Subscriptions
+Leverages Windows Management Instrumentation (`-PermanentWMI`) to silently trigger backdoors upon specific system events, creating highly stealthy persistence that is difficult for defenders to detect and remove.
+### 4.1.3 Fileless Payload Wrapping
+Encapsulates and compresses existing malicious scripts through the `Add-Persistence` function so it can be executed directly in memory without dropping easily detectable executable files onto the target's hard drive.
+
+### 4.2 Step-by-Step Execution
+This section explains the step-by-step execution using PowerSploit, reproducing the tutorial and explanation provided by Powersploit (n.d.).
+
+### Step 1: Downloading the Framework
+![image alt]()
+Command: `git clone https://github.com/PowerShellMafia/PowerSploit.git`
+Reason of command: To pull the entire suite of PowerSploit post-exploitation PowerShell scripts directly from the official GitHub repository to the local attacker machine.
+### Step 2: Installing to the System Path
+![image alt]()
+Command: `sudo mkdir -p /usr/share/powersploit` and `sudo cp -r * /usr/share/powersploit`
+Reason of command: Kali Linux locally stores its standard penetration testing tools in the /usr/share/ directory. The attacker ensures PowerSploit is permanently installed and easily accessible for crafting future payloads by creating a dedicated folder and copying the scripts there.
+### Step 3: Source Code Analysis of Persistence Modules
+![image alt]()
+Command: `cd Persistence` followed by `cat Persistence.psm1`
+Reason of command: To manually review the PowerShell module responsible for maintaining access. The attacker verifies the available parameters such as `-PermanentWMI`, `-ScheduledTask`, and `-Registry` to determine the stealthiest execution method for the specific target environment (by examining the source code).
 
 ## Comparative Discussion  
 Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
