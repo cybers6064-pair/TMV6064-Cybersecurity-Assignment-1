@@ -147,7 +147,13 @@ This section explains the step-by-step execution using Cryptcat, reproducing the
 ### Step 3: Verification  
 ![image alt](https://github.com/cybers6064-pair/TMV6064-Cybersecurity-Assignment-1/blob/ff652afbf9000ee4baa3b1332c6e5a754b522db8/Task%202%20images/Cryptcat3.png)      
 **Action:** Executing commands such as `id` and `ls` on the listener terminal.  
-**Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.  
+**Reason of action:** To prove that the network tunnel is successfully routing system commands back and forth securely.
+
+## 4. Powersploit
+PowerSploit is an open-source, PowerShell based post-exploitation framework designed to assist security professionals in assessing the security of Windows environments (Powersploit, n.d.). Moreover, it is mainly used during authorized penetration testing and red team engagements to identify vulnerabilities and strengthen defensive security measures (Powersploit, n.d.).
+
+## 4.1 Key Features
+The three key features of Powersploit are as follows :
 
 ## Comparative Discussion  
 Based on our experience using these tools, all of it manage to successfully maintain post-exploitation access. However, they operate at different network layers and serve distinct strategic purposes.  
@@ -168,7 +174,9 @@ GeeksforGeeks. (2025, July 23). *Maintaining access tools in Kali Linux*. https:
 
 Heath, M. (2023, July 6). *Web Shells: Understanding attacker's tools and techniques*. F5 Labs. https://www.f5.com/labs/articles/web-shells-understanding-attackers-tools-and-techniques  
 
-Kali Linux. (2025, December 9). *Weevely*. https://www.kali.org/tools/weevely/  
+Kali Linux. (2025, December 9). *Weevely*. https://www.kali.org/tools/weevely/
+
+Powersploit. (n.d.). *What is Powersploit?*. https://powersploit.com/#Installation
 
 Swain, P. (2025, February 21). *Install DVWA in Kali Linux !* [Video]. Youtube. https://youtu.be/FFDdetzSy0s?si=fJ9xwf4UwY00gzFa
 
